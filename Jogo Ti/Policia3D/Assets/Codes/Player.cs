@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
+            Time.timeScale = 0;
             GameOver.instacia.GameOverScreen();
         }
     }
