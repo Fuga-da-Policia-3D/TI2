@@ -40,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                MoveSide(Vector3.left);
+                MoveSide(Vector3.back);
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
-                MoveSide(Vector3.right);
+                MoveSide(Vector3.forward);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && isground)
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 Movement = Vector3.forward * currentspeed * Time.fixedDeltaTime;
+        Vector3 Movement = new Vector3 (1,0,0) * currentspeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + Movement);
     }
     private void MoveSide(Vector3 direction)
