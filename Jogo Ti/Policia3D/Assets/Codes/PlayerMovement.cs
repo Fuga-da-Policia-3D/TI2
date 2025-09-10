@@ -10,7 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpforce = 5f;
     public float verticalMultiplier = 2f;
     public float sidecooldown = 0.2f;
+    public float scalespeed = 10f;
+    public float minscale = 200f;
+    public float cooldowndown = 2f;
 
+    private Vector3 origalscale = new Vector3(1, 3, 1);
+    private float cooldowntimerdown = 0f;
+    private bool isscale;
     private float currentspeed = 0f;
     private Rigidbody rb;
     private bool isground;
@@ -40,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                MoveSide(Vector3.back);
+                MoveSide(-Vector3.back);
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
-                MoveSide(Vector3.forward);
+                MoveSide(-Vector3.forward);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && isground)
@@ -52,6 +58,30 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
             isground = false;
         }
+        if (Input.GetKeyDown(KeyCode.S) && !isscale)
+        {
+            Vector3 scaledecrese = new Vector3(0, 1, 0) * scalespeed * Time.deltaTime;
+            Vector3 newscale = transform.localScale - scaledecrese;
+            newscale.y = Mathf.Max(newscale.y - minscale);
+
+            transform.localScale = newscale;
+
+            isscale = true;
+            cooldowntimerdown = cooldowndown;
+        }
+
+        if (isscale)
+        {
+            cooldowntimerdown -= Time.deltaTime;
+
+            if (cooldowntimerdown <= 0f)
+            {
+                transform.localScale = origalscale;
+                isscale = false;
+            }
+        }
+
+
         /*
            float movey = -Input.GetAxis("Horizontal") * verticalMultiplier;
         // float movey = Input.GetAxis("Vertical") * verticalMultiplier; 
