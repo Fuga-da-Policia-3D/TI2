@@ -6,6 +6,8 @@ public class PathMaking : MonoBehaviour
     private int rng;
     private GameObject[] kill = new GameObject[2];
     private new Vector3 chaodetectado;
+    public static float pulando;
+    private float timing;
 
     //Lucas de Lima e ilva
     private void Update()
@@ -16,8 +18,10 @@ public class PathMaking : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.tag == "chao" && kill[0] == null || kill[0] == collision.gameObject)
         {
+            
             Destroy(kill[1]);
             chaodetectado = collision.gameObject.transform.position;
             kill[0] = collision.gameObject;

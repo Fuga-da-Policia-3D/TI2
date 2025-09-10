@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
             isground = false;
+            PathMaking.pulando = Time.time;
         }
         if (Input.GetKeyDown(KeyCode.S) && !isscale)
         {
