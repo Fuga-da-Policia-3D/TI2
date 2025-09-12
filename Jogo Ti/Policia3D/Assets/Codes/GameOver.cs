@@ -2,7 +2,7 @@
  Código feito por Gabriel Ramos Torres
 */
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -15,5 +15,10 @@ public class GameOver : MonoBehaviour
     public void GameOverScreen()
     {
         gameOver.SetActive(true);
+    }
+    public void Sair()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("test");
     }
 }
