@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float scalespeed = 10f;
     public float minscale = 200f;
     public float cooldowndown = 2f;
+    AudioManager aM;
 
     private Vector3 origalscale = new Vector3(1, 3, 1);
     private float cooldowntimerdown = 0f;
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isground)
         {
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+            aM.PlayAudio(0);
             isground = false;
             PathMaking.pulando = Time.time;
         }

@@ -409,7 +409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 2043133421}
   musicSource: {fileID: 2043133421}
-  audios: []
+  audios:
+  - {fileID: 8300000, guid: 1622cfd49fff7444793565e3c5224026, type: 3}
   mixer: {fileID: 24100000, guid: 76f3bf5ab0d56f64abe0982331a72b0f, type: 2}
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 0}
