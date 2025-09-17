@@ -8,6 +8,7 @@ public class PathMaking : MonoBehaviour
     private new Vector3 chaodetectado;
     public static float pulando;
     private Transform parenteTrigger;
+    public GameObject parenteTriggerObj;
     private float timing;
 
     //Lucas de Lima e ilva
@@ -22,7 +23,7 @@ public class PathMaking : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Por enquanto solução super bonder
-        if (collision.gameObject.tag == "chao" && kill[0] == null || kill[0] == collision.gameObject)
+        /*if (collision.gameObject.tag == "chao" && kill[0] == null || kill[0] == collision.gameObject)
         {
             
             Destroy(kill[1]);
@@ -40,14 +41,30 @@ public class PathMaking : MonoBehaviour
             Destroy(kill[0]);
             chaodetectado = collision.gameObject.transform.position;
             kill[2] = collision.gameObject;
-        }
+        }*/
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "MakePath")
         {
             parenteTrigger = other.GetComponentInParent<Transform>();
+            parenteTriggerObj = other.gameObject.transform.parent.gameObject;
             chaodetectado = parenteTrigger.transform.position;
+            if (kill[0]== null )
+            {
+                Destroy(kill[1]);
+                kill[0] = parenteTriggerObj;
+            }
+            else if (kill[1]== null )
+            {
+                Destroy(kill[2]);
+                kill[1] = parenteTriggerObj;
+            }
+            else if(kill[2] == null)
+            {
+                Destroy(kill[0]);
+                kill[2] = parenteTriggerObj;
+            }
             //print(chaodetectado);
             Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 -10, 0,0) , other.gameObject.transform.rotation);
             

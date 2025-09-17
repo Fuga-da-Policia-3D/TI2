@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MovingThings : MonoBehaviour
 {
+
     AudioManager aM;
     public CharacterController cc;
     [SerializeField] float playerSpeed;

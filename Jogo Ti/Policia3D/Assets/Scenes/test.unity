@@ -209,8 +209,8 @@ GameObject:
   - component: {fileID: 25225169}
   - component: {fileID: 25225168}
   - component: {fileID: 25225167}
+  - component: {fileID: 25225177}
   - component: {fileID: 25225166}
-  - component: {fileID: 25225175}
   - component: {fileID: 25225170}
   - component: {fileID: 25225171}
   - component: {fileID: 25225174}
@@ -306,7 +306,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.38, y: 2.01, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1605549419}
@@ -330,7 +330,7 @@ MonoBehaviour:
   maxspeed: 20
   lateraldistance: 5
   movex: 1
-  jumpforce: 8
+  jumpforce: 5
   verticalMultiplier: 2
   sidecooldown: 0.2
   scalespeed: 10
@@ -368,7 +368,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!54 &25225175
+  parenteTriggerObj: {fileID: 0}
+--- !u!114 &25225176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25225164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bace48df6a05a4caeca2b286f8736b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &25225177
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,20 +406,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &25225176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25225164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23bace48df6a05a4caeca2b286f8736b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &54159587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6733339773442975710, guid: abab24422f55c8649a2f20a4a7f40f46, type: 3}

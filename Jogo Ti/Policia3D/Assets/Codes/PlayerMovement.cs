@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float cooldowndown = 2f;
 
     AudioManager audioManager;
-    private Vector3 origalscale = new Vector3(1, 3, 1);
+    private Vector3 origalscale = new Vector3(1, 1.8f, 1);
     private float cooldowntimerdown = 0f;
     private bool isscale;
     private float currentspeed = 0f;
