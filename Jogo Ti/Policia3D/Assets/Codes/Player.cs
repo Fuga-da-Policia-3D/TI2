@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float forceamount = 10f;
-    void Start()
+    //private Rigidbody rb;
+    //private float forceamount = 10f;
+    /*void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector3.forward * forceamount * Time.deltaTime);
         }
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {

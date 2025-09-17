@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public float speed = 5;
+    public float speed = 5;
     public float acceleration = 2f;
     public float maxspeed = 20f;
     public float lateraldistance = 3f;
@@ -11,9 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float verticalMultiplier = 2f;
     public float sidecooldown = 0.2f;
     public float scalespeed = 10f;
-    public float minscale = 200f;
+    public float minscale = 1f;
     public float cooldowndown = 2f;
-    AudioManager aM;
 
     private Vector3 origalscale = new Vector3(1, 3, 1);
     private float cooldowntimerdown = 0f;
@@ -22,14 +22,17 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isground;
     private bool canmove = true;
-    private float sidemove = 0f; 
+    private float sidemove = 0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+
+    // Update is called once per frame
     void Update()
     {
+
         if (!canmove)
         {
             sidemove -= Time.deltaTime;
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isground)
         {
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-            aM.PlayAudio(0);
+            //aM.PlayAudio(0);
             isground = false;
             PathMaking.pulando = Time.time;
         }
@@ -99,9 +102,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 Movement = new Vector3 (1,0,0) * currentspeed * Time.fixedDeltaTime;
+        Vector3 Movement = new Vector3(1, 0, 0) * currentspeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + Movement);
     }
+
     private void MoveSide(Vector3 direction)
     {
         Vector3 targetposition = rb.position + direction * lateraldistance;
@@ -109,8 +113,6 @@ public class PlayerMovement : MonoBehaviour
         canmove = false;
         sidemove = sidecooldown;
     }
-
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("chao"))
@@ -119,4 +121,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
 }

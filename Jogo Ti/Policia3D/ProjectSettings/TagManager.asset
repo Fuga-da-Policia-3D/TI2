@@ -7,11 +7,12 @@ TagManager:
   - chao
   - Obstacle
   - MakePath
+  - Moedas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
