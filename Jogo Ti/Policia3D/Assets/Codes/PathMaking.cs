@@ -46,8 +46,11 @@ public class PathMaking : MonoBehaviour
     {
         if (other.gameObject.tag == "MakePath")
         {
-            Instantiate(paths[rng], new Vector3(chaodetectado.x + 80, 0,0) , other.gameObject.transform.rotation);
             parenteTrigger = other.GetComponentInParent<Transform>();
+            chaodetectado = parenteTrigger.transform.position;
+            //print(chaodetectado);
+            Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 -10, 0,0) , other.gameObject.transform.rotation);
+            
         }
     }
 }

@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
     private void ScoreMaking()
     {
         scoreCalculo = Mathf.FloorToInt(transform.position.x);
-        print(scoreCalculo);
+        //print(scoreCalculo);
         GameController.instancia.ScoreCount();
     }
 }
