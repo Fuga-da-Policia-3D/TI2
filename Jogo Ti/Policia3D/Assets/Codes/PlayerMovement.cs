@@ -3,6 +3,7 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public float speed = 5;
     public float acceleration = 2f;
     public float maxspeed = 20f;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float minscale = 1f;
     public float cooldowndown = 2f;
 
+    AudioManager audioManager;
     private Vector3 origalscale = new Vector3(1, 3, 1);
     private float cooldowntimerdown = 0f;
     private bool isscale;
@@ -24,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     private bool canmove = true;
     private float sidemove = 0f;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -60,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isground)
         {
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-            //aM.PlayAudio(0);
+            audioManager.PlaySFX(audioManager.jump);
             isground = false;
             PathMaking.pulando = Time.time;
         }

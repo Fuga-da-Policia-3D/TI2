@@ -4,9 +4,12 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource sfxSource;
     public static AudioManager instance;
-    public AudioSource sfxSource;
-    public AudioSource musicSource;
+    //public AudioSource sfxSource;
+    //public AudioSource musicSource;
+    public AudioClip jump;
     public AudioClip[] audios;
     public AudioMixer mixer;
     public Slider masterSlider, musicSlider, sfxSlider;
@@ -39,6 +42,11 @@ public class AudioManager : MonoBehaviour
         {
             SetSFXVolume();
         }
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
     }
     public void PlayAudio(int index)
     {
