@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - MakePath
   - Moedas
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - TriggerLayer
   - 
   - 
   - 

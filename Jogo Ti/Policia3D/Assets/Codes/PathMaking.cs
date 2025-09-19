@@ -9,7 +9,9 @@ public class PathMaking : MonoBehaviour
     public static float pulando;
     private Transform parenteTrigger;
     public GameObject parenteTriggerObj;
+    public Collider playercolider;
     private float timing;
+    private float fila = 0;
 
     //Lucas de Lima e ilva
     private void Update()
@@ -17,57 +19,42 @@ public class PathMaking : MonoBehaviour
         rng = Random.Range(0, paths.Length);
         
     }
-
-
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Por enquanto solução super bonder
-        /*if (collision.gameObject.tag == "chao" && kill[0] == null || kill[0] == collision.gameObject)
-        {
-            
-            Destroy(kill[1]);
-            chaodetectado = collision.gameObject.transform.position;
-            kill[0] = collision.gameObject;
-        }
-        else if(collision.gameObject.tag == "chao" && kill[1] == null || kill[1] == collision.gameObject)
-        {
-            Destroy(kill[2]);
-            chaodetectado = collision.gameObject.transform.position;
-            kill[1] = collision.gameObject;
-        }
-        else if(collision.gameObject.tag == "chao" && kill[2] == null || kill[2] == collision.gameObject)
-        {
-            Destroy(kill[0]);
-            chaodetectado = collision.gameObject.transform.position;
-            kill[2] = collision.gameObject;
-        }*/
-    }
     private void OnTriggerEnter(Collider other)
     {
+       
         if (other.gameObject.tag == "MakePath")
         {
             parenteTrigger = other.GetComponentInParent<Transform>();
             parenteTriggerObj = other.gameObject.transform.parent.gameObject;
             chaodetectado = parenteTrigger.transform.position;
-            if (kill[0]== null )
+            if (fila == 0)
             {
+                kill[0] = other.gameObject.transform.parent.gameObject;
                 Destroy(kill[1]);
-                kill[0] = parenteTriggerObj;
+                fila++;
+
             }
-            else if (kill[1]== null )
+            else if (fila == 1)
             {
+                kill[1] = other.gameObject.transform.parent.gameObject;
                 Destroy(kill[2]);
-                kill[1] = parenteTriggerObj;
+                fila++;
+
+
             }
-            else if(kill[2] == null)
+            else if (fila == 2)
             {
+                kill[2] = other.gameObject.transform.parent.gameObject;
                 Destroy(kill[0]);
-                kill[2] = parenteTriggerObj;
+                fila++;
             }
+            if (fila == 3)
+            {
+                fila = 0;
+            }
+           
             //print(chaodetectado);
-            Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 -10, 0,0) , other.gameObject.transform.rotation);
-            
+            Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
         }
     }
 }
