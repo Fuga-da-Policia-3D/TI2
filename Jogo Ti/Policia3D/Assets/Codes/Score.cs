@@ -6,6 +6,11 @@ public class Score : MonoBehaviour
     public static int coinsCalculo = 0;
     static float multiplyer = 1;
 
+    private void Start()
+    {
+        scoreCalculo = 0;
+        coinsCalculo = 0;
+    }
     private void Update()
     {
         ScoreMaking();
