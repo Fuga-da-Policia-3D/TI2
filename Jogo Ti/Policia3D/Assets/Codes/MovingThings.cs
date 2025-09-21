@@ -16,6 +16,7 @@ public class MovingThings : MonoBehaviour
     [SerializeField] float Gravidade = -10f;
     [SerializeField] float temponoAr = 0.3f;
     [SerializeField] float forcadePulo = 5f;
+    public float acceleration = 2f;
     private bool isscale = false;
     public float scalespeed = 10f;
     public float minscale = 1f;
@@ -115,13 +116,22 @@ public class MovingThings : MonoBehaviour
     }
     void SpeedUP()
     {
-        if(Score.scoreCalculo >= 0 || Score.scoreCalculo < 1000 || playerSpeed <=10 || playerSpeed == 10)
+        if(Score.scoreCalculo >= 0 || Score.scoreCalculo < 1000)
         {
-            playerSpeed += 2 * Time.deltaTime;
+            
+            playerSpeed += acceleration * Time.deltaTime;
+            if(playerSpeed > 10)
+            {
+                playerSpeed = 10f;
+            }
         }
-        if (Score.scoreCalculo >= 1000 || Score.scoreCalculo<2000 && playerSpeed<=20 || playerSpeed == 20)
+        if (Score.scoreCalculo >= 1000 || Score.scoreCalculo<2000 )
         {
-            playerSpeed += 2 * Time.deltaTime;
+            playerSpeed += acceleration * Time.deltaTime;
+            if(playerSpeed > 20)
+            {
+                playerSpeed = 20f;
+            }
         }
     }
 

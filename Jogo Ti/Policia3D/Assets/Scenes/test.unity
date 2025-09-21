@@ -385,6 +385,7 @@ MonoBehaviour:
   Gravidade: -10
   temponoAr: 1
   forcadePulo: 5
+  acceleration: 2
   scalespeed: 10
   minscale: 1
   cooldowndown: 2
@@ -930,10 +931,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 54159599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 860, y: -24.999878}
-  m_SizeDelta: {x: -1720, y: 50}
+  m_AnchoredPosition: {x: -100, y: -25}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427944170
 MonoBehaviour:
@@ -1277,7 +1278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967089339997222802, guid: abab24422f55c8649a2f20a4a7f40f46, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5838267573015977871, guid: abab24422f55c8649a2f20a4a7f40f46, type: 3}
       propertyPath: m_fontSize
