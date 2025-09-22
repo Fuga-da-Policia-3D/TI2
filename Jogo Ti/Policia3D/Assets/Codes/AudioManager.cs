@@ -10,12 +10,15 @@ public class AudioManager : MonoBehaviour
     //public AudioSource sfxSource;
     //public AudioSource musicSource;
     public AudioClip jump;
+    public AudioClip mainMusic;
     public AudioClip[] audios;
     public AudioMixer mixer;
     public Slider masterSlider, musicSlider, sfxSlider;
 
     private void Start()
     {
+        musicSource.clip = mainMusic;
+        musicSource.Play();
         if (PlayerPrefs.HasKey("masterVolume"))
         {
             LoadMasterVolume();
@@ -44,6 +47,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.PlayOneShot(clip);
+    }
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);

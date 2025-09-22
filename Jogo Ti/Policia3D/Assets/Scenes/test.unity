@@ -431,11 +431,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad76387397593840bbc5e696063f39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  jump: {fileID: 0}
+  musicSource: {fileID: 103498179}
+  sfxSource: {fileID: 830852888}
+  jump: {fileID: 8300000, guid: 1622cfd49fff7444793565e3c5224026, type: 3}
+  mainMusic: {fileID: 8300000, guid: 65cda70cca330bb44a9efe17de701d43, type: 3}
   audios:
   - {fileID: 8300000, guid: 1622cfd49fff7444793565e3c5224026, type: 3}
+  - {fileID: 8300000, guid: 65cda70cca330bb44a9efe17de701d43, type: 3}
   mixer: {fileID: 24100000, guid: 76f3bf5ab0d56f64abe0982331a72b0f, type: 2}
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 0}
@@ -500,7 +502,7 @@ AudioSource:
   m_GameObject: {fileID: 103498177}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2736222805388413978, guid: 76f3bf5ab0d56f64abe0982331a72b0f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -877,6 +879,7 @@ MonoBehaviour:
   musicSource: {fileID: 103498179}
   sfxSource: {fileID: 830852888}
   jump: {fileID: 8300000, guid: 1622cfd49fff7444793565e3c5224026, type: 3}
+  mainMusic: {fileID: 8300000, guid: 65cda70cca330bb44a9efe17de701d43, type: 3}
   audios: []
   mixer: {fileID: 24100000, guid: 76f3bf5ab0d56f64abe0982331a72b0f, type: 2}
   masterSlider: {fileID: 0}
@@ -1278,7 +1281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967089339997222802, guid: abab24422f55c8649a2f20a4a7f40f46, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838267573015977871, guid: abab24422f55c8649a2f20a4a7f40f46, type: 3}
       propertyPath: m_fontSize
@@ -1374,7 +1377,7 @@ AudioSource:
   m_GameObject: {fileID: 830852886}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 342368850962061271, guid: 76f3bf5ab0d56f64abe0982331a72b0f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
