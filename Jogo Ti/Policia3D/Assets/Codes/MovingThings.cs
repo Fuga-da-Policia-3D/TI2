@@ -116,19 +116,12 @@ public class MovingThings : MonoBehaviour
     }
     void SpeedUP()
     {
-        if(Score.scoreCalculo >= 0 || Score.scoreCalculo < 1000)
+        float posicao = 1;
+        if (Score.scoreCalculo >= 500 )
         {
-            
-            playerSpeed += acceleration * Time.deltaTime;
-            if(playerSpeed > 10)
-            {
-                playerSpeed = 10f;
-            }
-        }
-        if (Score.scoreCalculo >= 1000 || Score.scoreCalculo<2000 )
-        {
-            playerSpeed += acceleration * Time.deltaTime;
-            if(playerSpeed > 20)
+            playerSpeed += 2f * Time.deltaTime;
+            posicao = 2;
+            if(playerSpeed > 20 && posicao == 2)
             {
                 playerSpeed = 20f;
             }
