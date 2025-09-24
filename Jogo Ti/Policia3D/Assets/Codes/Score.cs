@@ -8,8 +8,8 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-        scoreCalculo = 0;
-        coinsCalculo = 0;
+        
+        
     }
     private void Update()
     {
