@@ -47,4 +47,6 @@ public class Player : MonoBehaviour
             GameOver.instacia.GameOverScreen();
         }
     }
+
+
 }
