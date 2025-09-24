@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI HighScoreText;
     public static GameController instancia;
     public void Awake()
     {
@@ -21,6 +22,10 @@ public class GameController : MonoBehaviour
         {
             ScoreCount();
         }
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            LoadHighScore();
+        }
         if (PlayerPrefs.HasKey("Coins"))
         {
             LoadCoins();
@@ -35,6 +40,15 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score:" + Score.scoreCalculo.ToString();
         PlayerPrefs.SetInt("Score", Score.scoreCalculo);
         PlayerPrefs.Save();
+
+        int HighScore = PlayerPrefs.GetInt("HighScore", Score.scoreCalculo);
+        if(Score.scoreCalculo > HighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", Score.scoreCalculo);
+            HighScore = Score.scoreCalculo;
+        }
+        PlayerPrefs.Save();
+        LoadHighScore();
     }
 
     public void CoinCount()
@@ -56,5 +70,13 @@ public class GameController : MonoBehaviour
         Score.coinsCalculo = PlayerPrefs.GetInt("Coins", 0);
         CoinCount();
     }
-
+    public void LoadHighScore()
+    {
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        
+        if (HighScoreText != null)
+        {
+            HighScoreText.text = "High Score: " + highScore.ToString();
+        }
+    }
 }

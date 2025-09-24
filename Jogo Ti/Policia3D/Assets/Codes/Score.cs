@@ -30,5 +30,12 @@ public class Score : MonoBehaviour
         scoreCalculo = Mathf.FloorToInt(transform.position.x);
         //print(scoreCalculo);
         GameController.instancia.ScoreCount();
+
+        if (scoreCalculo > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", scoreCalculo);
+            PlayerPrefs.Save();
+            GameController.instancia.LoadHighScore();
+        }
     }
 }
