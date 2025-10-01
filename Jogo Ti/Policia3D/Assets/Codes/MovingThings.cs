@@ -86,7 +86,7 @@ public class MovingThings : MonoBehaviour
         {
             MoveRight();
         }
-        if(Input.GetKeyDown(KeyCode.Space) && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             Jump();
         }
@@ -117,11 +117,11 @@ public class MovingThings : MonoBehaviour
     void SpeedUP()
     {
         float posicao = 1;
-        if (Score.scoreCalculo >= 500 )
+        if (Score.scoreCalculo >= 500)
         {
             playerSpeed += 2f * Time.deltaTime;
             posicao = 2;
-            if(playerSpeed > 20 && posicao == 2)
+            if (playerSpeed > 20 && posicao == 2)
             {
                 playerSpeed = 20f;
             }
@@ -130,10 +130,25 @@ public class MovingThings : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "chao")
+        if (collision.gameObject.tag == "chao")
         {
             isGround = true;
-            
+
+        }
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Vector3 normal = contact.normal;
+
+            if (Vector3.Dot(normal, Vector3.forward) > 0.5f)
+            {
+                Debug.Log("Hit from behind");
+                playerSpeed = 10;
+            }
+            else if (Vector3.Dot(normal, Vector3.back) > 0.5f)
+            {
+                Debug.Log("Hit from the front");
+                playerSpeed = 10;
+            }
         }
     }
 
@@ -144,7 +159,7 @@ public class MovingThings : MonoBehaviour
         Gravidade = forcadePulo;
         isGround = false;
         aM.PlaySFX(aM.jump);
-        
+
     }
 
     void Slide()
@@ -157,7 +172,7 @@ public class MovingThings : MonoBehaviour
 
         isscale = true;
         cooldowntimerdown = cooldowndown;
-        
+
     }
 
     void DetectSwipes()
@@ -197,7 +212,7 @@ public class MovingThings : MonoBehaviour
                             Debug.Log("Swipe Up");
                             Jump();
                         }
-                        else if(delta.y < 0 && !isscale)
+                        else if (delta.y < 0 && !isscale)
                         {
                             Debug.Log("Swipe Down");
                             Slide();

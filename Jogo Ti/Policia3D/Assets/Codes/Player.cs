@@ -32,21 +32,39 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Obstacle")
+        foreach (ContactPoint contact in collision.contacts)
         {
-            Time.timeScale = 0;
-            GameOver.instacia.GameOverScreen();
+            Vector3 normal = contact.normal;
+            if (Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle")
+            {
+                Debug.Log("Hit from the left side");
+                Time.timeScale = 0;
+                GameOver.instacia.GameOverScreen();
+            }
+            else if (Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle")
+            {
+                Debug.Log("Hit from the right side");
+                Time.timeScale = 0;
+                GameOver.instacia.GameOverScreen();
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Obstacle")
+        Vector3 direction = (other.transform.position - transform.position).normalized;
+
+        if (Vector3.Dot(direction, Vector3.right) > 0.5f && other.gameObject.tag == "Obstacle")
         {
+            Debug.Log("Triggered on the right side");
+            Time.timeScale = 0;
+            GameOver.instacia.GameOverScreen();
+        }
+        else if (Vector3.Dot(direction, Vector3.left) > 0.5f && other.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("Triggered on the left side");
             Time.timeScale = 0;
             GameOver.instacia.GameOverScreen();
         }
     }
-
-
 }
