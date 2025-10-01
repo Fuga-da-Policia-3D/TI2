@@ -170,6 +170,11 @@ public class MovingThings : MonoBehaviour
                 slowedTimer = Time.time;
                 playerSpeed = 2;
                 contato++;
+                if (contato == 4)
+                {
+                    myLane--;
+                }
+                //myLane--;
                 isSlowed = true;
             }
             else if (Vector3.Dot(normal, Vector3.back) > 0.5f)
@@ -177,6 +182,11 @@ public class MovingThings : MonoBehaviour
                 Debug.Log("Hit from the front");
                 slowedTimer = Time.time;
                 playerSpeed = 2;
+                if (contato == 4)
+                {
+                    myLane++;
+                }
+                //myLane++;
                 isSlowed = true;
             }
         }
