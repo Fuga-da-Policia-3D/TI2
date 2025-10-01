@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System;
 using Unity.Mathematics;
 using UnityEngine;
@@ -13,9 +14,13 @@ public class MovingThings : MonoBehaviour
     [SerializeField] float targetPos;
     [SerializeField] float laneTransitionSpeed;
     public static bool isGround = false;
+    public static bool isSlowed = false;
+    private float slowedTimer = -1;
+    private int contato = 0; //Solução super bonder
     [SerializeField] float Gravidade = -10f;
     [SerializeField] float temponoAr = 0.3f;
     [SerializeField] float forcadePulo = 5f;
+
     public float acceleration = 2f;
     private bool isscale = false;
     public float scalespeed = 10f;
@@ -37,6 +42,8 @@ public class MovingThings : MonoBehaviour
     }
     void Start()
     {
+        Time.timeScale = 1;
+        contato = 0;
         cc = GetComponent<CharacterController>();
         inicialY = this.gameObject.transform.position.y;
 
@@ -60,6 +67,16 @@ public class MovingThings : MonoBehaviour
                 transform.localScale = origalscale;
                 isscale = false;
             }
+        }
+        if(slowedTimer + 1f > Time.time && isSlowed == true && contato > 5)
+        {
+            Time.timeScale = 0;
+            GameOver.instacia.GameOverScreen();
+        }
+        if(slowedTimer + 1f < Time.time && isSlowed == true )
+        {
+            isSlowed = false;
+            contato = 0;
         }
     }
 
@@ -117,6 +134,14 @@ public class MovingThings : MonoBehaviour
     void SpeedUP()
     {
         float posicao = 1;
+        if(Score.scoreCalculo >= 0 && Score.scoreCalculo < 500)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if(playerSpeed > 10)
+            {
+                playerSpeed = 10f;
+            }
+        }
         if (Score.scoreCalculo >= 500)
         {
             playerSpeed += 2f * Time.deltaTime;
@@ -142,12 +167,17 @@ public class MovingThings : MonoBehaviour
             if (Vector3.Dot(normal, Vector3.forward) > 0.5f)
             {
                 Debug.Log("Hit from behind");
-                playerSpeed = 10;
+                slowedTimer = Time.time;
+                playerSpeed = 2;
+                contato++;
+                isSlowed = true;
             }
             else if (Vector3.Dot(normal, Vector3.back) > 0.5f)
             {
                 Debug.Log("Hit from the front");
-                playerSpeed = 10;
+                slowedTimer = Time.time;
+                playerSpeed = 2;
+                isSlowed = true;
             }
         }
     }
