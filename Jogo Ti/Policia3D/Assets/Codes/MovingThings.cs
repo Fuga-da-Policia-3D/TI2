@@ -85,6 +85,10 @@ public class MovingThings : MonoBehaviour
         {
             Score.multiplyer = 1;
         }
+        if(tempopowerupinvencible + 5f < Time.time)
+        {
+            isIndestructuble = false;
+        }
     }
 
 
@@ -203,26 +207,30 @@ public class MovingThings : MonoBehaviour
     {
         if (other.gameObject.tag == "Especial")
         {
-            print("Entrou");
-            Destroy(other.gameObject);
-            tempopowerupmult = Time.time;
-            Score.multiplyer = 2;
+            
+            //print("Entrou");
+            //Destroy(other.gameObject);
+            //tempopowerupmult = Time.time;
+            //Score.multiplyer = 2;
 
-            /*if (other.TryGetComponent<PowerUps>(out PowerUps powerUp))
+            other.TryGetComponent<PowerUps>(out PowerUps powerUp);
+            int numerodoid = powerUp.PowerUpID();
+            if (numerodoid == 1)
             {
-                int numerodoid = powerUp.PowerUpID(); 
-               if(numerodoid == 1)
-               {
-                    print("Entrou");
-                    Destroy(other.gameObject);
-                    tempopowerupmult = Time.time;
-                    Score.multiplyer = 2;
-               }
-               if(numerodoid == 2)
-               {
-
-               }
-            }*/
+                print("Entrou");
+                Destroy(other.gameObject);
+                tempopowerupmult = Time.time;
+                Score.multiplyer = 2;
+            }
+            if (numerodoid == 2)
+            {
+                Destroy(other.gameObject);
+                tempopowerupinvencible = Time.time;
+                isIndestructuble = true;
+            }
+            
+              
+            
         }
     }
 

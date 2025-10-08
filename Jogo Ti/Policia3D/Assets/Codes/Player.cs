@@ -47,6 +47,10 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0;
                 GameOver.instacia.GameOverScreen();
             }
+            else if(Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle" || Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle" && MovingThings.isIndestructuble)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 

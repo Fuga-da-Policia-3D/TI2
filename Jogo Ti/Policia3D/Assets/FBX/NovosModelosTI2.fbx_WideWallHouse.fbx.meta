@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0edbfe2c8ed69244f92617a8eae33bd2
+guid: 8a3e2216bb9ec0846a3e41cc3d9c0e47
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,17 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Concrete
-    second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Smootwall
+      name: Material.002
     second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
   materials:
     materialImportMode: 2

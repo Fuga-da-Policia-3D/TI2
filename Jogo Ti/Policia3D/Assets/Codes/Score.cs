@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
     }
     private void ScoreMaking()
     {
-        scoreCalculo = Mathf.FloorToInt(transform.position.x) * multiplyer;
+        scoreCalculo = Mathf.FloorToInt(transform.position.x * multiplyer);
         
         //print(scoreCalculo);
         GameController.instancia.ScoreCount();
