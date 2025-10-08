@@ -17,9 +17,12 @@ public class MovingThings : MonoBehaviour
     public static bool isSlowed = false;
     private float slowedTimer = -1;
     private int contato = 0; //Solução super bonder
+    public static bool isIndestructuble = false;
     [SerializeField] float Gravidade = -10f;
     [SerializeField] float temponoAr = 0.3f;
     [SerializeField] float forcadePulo = 5f;
+    private float tempopowerupmult;
+    private float tempopowerupinvencible;
 
     public float acceleration = 2f;
     private bool isscale = false;
@@ -77,6 +80,10 @@ public class MovingThings : MonoBehaviour
         {
             isSlowed = false;
             contato = 0;
+        }
+        if(tempopowerupmult + 12f < Time.time)
+        {
+            Score.multiplyer = 1;
         }
     }
 
@@ -189,6 +196,33 @@ public class MovingThings : MonoBehaviour
                 //myLane++;
                 isSlowed = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Especial")
+        {
+            print("Entrou");
+            Destroy(other.gameObject);
+            tempopowerupmult = Time.time;
+            Score.multiplyer = 2;
+
+            /*if (other.TryGetComponent<PowerUps>(out PowerUps powerUp))
+            {
+                int numerodoid = powerUp.PowerUpID(); 
+               if(numerodoid == 1)
+               {
+                    print("Entrou");
+                    Destroy(other.gameObject);
+                    tempopowerupmult = Time.time;
+                    Score.multiplyer = 2;
+               }
+               if(numerodoid == 2)
+               {
+
+               }
+            }*/
         }
     }
 

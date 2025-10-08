@@ -35,13 +35,13 @@ public class Player : MonoBehaviour
         foreach (ContactPoint contact in collision.contacts)
         {
             Vector3 normal = contact.normal;
-            if (Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle")
+            if (Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
             {
                 Debug.Log("Hit from the left side");
                 Time.timeScale = 0;
                 GameOver.instacia.GameOverScreen();
             }
-            else if (Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle")
+            else if (Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
             {
                 Debug.Log("Hit from the right side");
                 Time.timeScale = 0;

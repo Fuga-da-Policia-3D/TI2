@@ -4,7 +4,7 @@ public class Score : MonoBehaviour
 {
     public static int scoreCalculo = 0;
     public static int coinsCalculo = 0;
-    static float multiplyer = 1;
+    public static int multiplyer = 1;
 
     private void Start()
     {
@@ -27,7 +27,8 @@ public class Score : MonoBehaviour
     }
     private void ScoreMaking()
     {
-        scoreCalculo = Mathf.FloorToInt(transform.position.x);
+        scoreCalculo = Mathf.FloorToInt(transform.position.x) * multiplyer;
+        
         //print(scoreCalculo);
         GameController.instancia.ScoreCount();
 
