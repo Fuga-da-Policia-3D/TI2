@@ -208,16 +208,25 @@ public class MovingThings : MonoBehaviour
         if (other.gameObject.tag == "Especial")
         {
             
-            //print("Entrou");
-            //Destroy(other.gameObject);
-            //tempopowerupmult = Time.time;
-            //Score.multiplyer = 2;
+            
 
             other.TryGetComponent<PowerUps>(out PowerUps powerUp);
             int numerodoid = powerUp.PowerUpID();
-            if (numerodoid == 1)
+            switch (numerodoid)
             {
-                print("Entrou");
+                case 1:
+                    Destroy(other.gameObject);
+                    tempopowerupmult = Time.time;
+                    Score.multiplyer = 2;
+                    break;
+                case 2:
+                    Destroy(other.gameObject);
+                    tempopowerupinvencible = Time.time;
+                    isIndestructuble = true;
+                    break;
+            }
+            /*if (numerodoid == 1)
+            {
                 Destroy(other.gameObject);
                 tempopowerupmult = Time.time;
                 Score.multiplyer = 2;
@@ -227,7 +236,7 @@ public class MovingThings : MonoBehaviour
                 Destroy(other.gameObject);
                 tempopowerupinvencible = Time.time;
                 isIndestructuble = true;
-            }
+            }*/
             
               
             
