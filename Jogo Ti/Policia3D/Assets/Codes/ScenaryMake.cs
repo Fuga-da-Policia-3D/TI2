@@ -11,8 +11,8 @@ public class ScenaryMake : MonoBehaviour
     private void Start()
     {
         int rng = Random.Range(0, Cenarios.Length);
-        scenaryDireita = Instantiate(Cenarios[rng], caminhoDireita.transform.position, caminhoDireita.transform.rotation);
-        scenenaryEsquerda = Instantiate(Cenarios[rng], caminhoEsquerda.transform.position, caminhoEsquerda.transform.rotation);// inicio do jogo
+        scenaryDireita = Instantiate(Cenarios[rng], caminhoDireita.transform.position + new Vector3(367, 0, 0), caminhoDireita.transform.rotation);
+        scenenaryEsquerda = Instantiate(Cenarios[rng], caminhoEsquerda.transform.position  + new Vector3(367, 0, 0), caminhoEsquerda.transform.rotation);// inicio do jogo
     }
 
     private void Update()
@@ -36,8 +36,8 @@ public class ScenaryMake : MonoBehaviour
     {
         int rng = Random.Range(0, Cenarios.Length);
 
-        scenaryDireita = Instantiate(Cenarios[rng], caminhoDireita.transform.position + distorcao, caminhoDireita.transform.rotation);
-        scenenaryEsquerda = Instantiate(Cenarios[rng], caminhoEsquerda.transform.position + distorcao, caminhoEsquerda.transform.rotation);// inicio do jogo
+        scenaryDireita = Instantiate(Cenarios[rng], caminhoDireita.transform.position + distorcao + new Vector3(367, 0, 0), caminhoDireita.transform.rotation);
+        scenenaryEsquerda = Instantiate(Cenarios[rng], caminhoEsquerda.transform.position + distorcao + new Vector3(367,0,0), caminhoEsquerda.transform.rotation);// inicio do jogo
         distorcao.x += 750;
     }
 }
