@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public GameObject PauseGame;
+    public GameObject menuSom;
+    public GameObject pauseprincipal;
     public static Pause instacia;
     private bool isPaused = false;
 
@@ -40,5 +42,15 @@ public class Pause : MonoBehaviour
     public void Continuar()
     {
         PauseScreen();
+    }
+    public void ConfigSom()
+    {
+        pauseprincipal.SetActive(false);
+        menuSom.SetActive(true);
+    }
+    public void SairConfigSom()
+    {
+        pauseprincipal.SetActive(true);
+        menuSom.SetActive(false);
     }
 }

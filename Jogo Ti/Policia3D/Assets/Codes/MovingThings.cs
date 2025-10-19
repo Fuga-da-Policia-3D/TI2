@@ -34,8 +34,8 @@ public class MovingThings : MonoBehaviour
     private float inputJump = 0;
 
     private float inicialY;
-    private float lastTapTime = 0f;
-    private int tapCount = 0;
+    /*private float lastTapTime = 0f;
+    private int tapCount = 0;*/
     private Vector2 startTouch;
 
 
@@ -118,9 +118,13 @@ public class MovingThings : MonoBehaviour
         {
             Jump();
         }
-        if (Input.GetKeyDown(KeyCode.S) && !isscale)
+        if (Input.GetKeyDown(KeyCode.S) && !isscale && isGround)
         {
             Slide();
+        }
+        else if ( Input.GetKeyDown(KeyCode.S) && !isGround)
+        {
+            Gravidade = -15;
         }
 
 
@@ -193,6 +197,7 @@ public class MovingThings : MonoBehaviour
                 Debug.Log("Hit from the front");
                 slowedTimer = Time.time;
                 playerSpeed = 2;
+                contato++;
                 if (contato == 4)
                 {
                     myLane++;
@@ -303,10 +308,14 @@ public class MovingThings : MonoBehaviour
                             Debug.Log("Swipe Up");
                             Jump();
                         }
-                        else if (delta.y < 0 && !isscale)
+                        else if (delta.y < 0 && !isscale && isGround)
                         {
                             Debug.Log("Swipe Down");
                             Slide();
+                        }
+                        else if(delta.y < 0 && !isGround)
+                        {
+                            Gravidade = -15;
                         }
                     }
                 }
