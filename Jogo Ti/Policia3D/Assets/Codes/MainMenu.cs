@@ -1,4 +1,4 @@
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public void IniciarJogo()
     {
         SceneManager.LoadScene(1);
+        Score.scoreCalculo = 0;
     }
 
     public void Loja()

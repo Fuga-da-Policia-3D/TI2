@@ -53,4 +53,19 @@ public class Pause : MonoBehaviour
         pauseprincipal.SetActive(true);
         menuSom.SetActive(false);
     }
+
+    public void Pausar()
+    {
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            PauseGame.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            PauseGame.SetActive(false);
+        }
+    }
 }

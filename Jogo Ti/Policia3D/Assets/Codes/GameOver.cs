@@ -14,7 +14,9 @@ public class GameOver : MonoBehaviour
     }
     public void GameOverScreen()
     {
+        Score.scoreCalculo = 0;
         gameOver.SetActive(true);
+       
     }
     public void Sair()
     {

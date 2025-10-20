@@ -7,7 +7,15 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI HighScoreText;
+    public TextMeshProUGUI TempoPowerUP;
     public static GameController instancia;
+
+    private int textoadd;
+
+    private string multiplierText = "";
+    private string invincibilityText = "";
+
+
     public void Awake()
     {
         instancia = this;
@@ -34,6 +42,11 @@ public class GameController : MonoBehaviour
         {
             CoinCount();
         }
+    }
+
+    private void Update()
+    {
+        
     }
     public void ScoreCount()
     {
@@ -79,4 +92,53 @@ public class GameController : MonoBehaviour
             HighScoreText.text = "High Score: " + highScore.ToString();
         }
     }
+
+
+    public void TempoDoPowerUp(int ID, float Tempo)
+    {
+        if (ID == 1) // Multiplier
+        {
+            if (Tempo <= 0)
+            {
+                multiplierText = "";
+            }
+            else
+            {
+                multiplierText = "Multiplier: " + Mathf.CeilToInt(Tempo) + "s";
+            }
+        }
+        else if (ID == 2) // Invincibility
+        {
+            if (Tempo <= 0)
+            {
+                invincibilityText = "";
+            }
+            else
+            {
+                invincibilityText = "Invincibility: " + Mathf.CeilToInt(Tempo) + "s";
+            }
+        }
+
+
+
+        // Combine both texts, skipping empty ones
+        string combined = "";
+
+        if (!string.IsNullOrEmpty(multiplierText))
+        {
+            combined += multiplierText + "\n";
+        }
+
+        if (!string.IsNullOrEmpty(invincibilityText))
+        {
+            combined += invincibilityText;
+        }
+
+        TempoPowerUP.text = combined;
+    }
+
+
+
+
+
 }

@@ -3,17 +3,27 @@ using UnityEngine;
 public class PathMaking : MonoBehaviour
 {
     public GameObject[] paths;
+    public GameObject caminhopolicail;
+    
+
+
     private int rng;
     [SerializeField]private GameObject[] kill = new GameObject[3];
     private new Vector3 chaodetectado;
     public static float pulando;
+    public static float pathafazer = 1;
     private Transform parenteTrigger;
     public GameObject parenteTriggerObj;
     public Collider playercolider;
     private float timing;
     private float fila = 0;
 
-    //Lucas de Lima e ilva
+    //Lucas de Lima e silva
+
+    private void Start()
+    {
+        pathafazer = 1;
+    }
     private void Update()
     {
         rng = Random.Range(0, paths.Length);
@@ -53,8 +63,15 @@ public class PathMaking : MonoBehaviour
                 fila = 0;
             }
            
-            //print(chaodetectado);
-            Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
+            if(pathafazer == 1)
+            {
+                Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
+            }
+            else if(pathafazer == 2)
+            {
+                Instantiate(caminhopolicail, new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
+            }
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingThings : MonoBehaviour
@@ -21,8 +22,19 @@ public class MovingThings : MonoBehaviour
     [SerializeField] float Gravidade = -10f;
     [SerializeField] float temponoAr = 0.3f;
     [SerializeField] float forcadePulo = 5f;
-    private float tempopowerupmult;
-    private float tempopowerupinvencible;
+    private int number;
+    private float timer;
+
+    float timerMultiplier = 0f;
+    int timeLeftMultiplier = 12;
+
+    float timerInvincible = 0f;
+    int timeLeftInvincible = 5;
+
+
+
+    private float tempopowerupmult = -13;
+    private float tempopowerupinvencible = -6;
 
     public float acceleration = 2f;
     private bool isscale = false;
@@ -81,13 +93,49 @@ public class MovingThings : MonoBehaviour
             isSlowed = false;
             contato = 0;
         }
+        if(tempopowerupmult + 12f > Time.time)
+        {
+
+            if (timeLeftMultiplier > 0)
+            {
+                timerMultiplier += Time.deltaTime;
+
+                if (timerMultiplier >= 1f)
+                {
+                    timeLeftMultiplier--;
+                    timerMultiplier = 0f;
+                }
+
+                GameController.instancia.TempoDoPowerUp(1, timeLeftMultiplier);
+            }
+
+        }
         if(tempopowerupmult + 12f < Time.time)
         {
             Score.multiplyer = 1;
+            GameController.instancia.TempoDoPowerUp(1, 0);
         }
-        if(tempopowerupinvencible + 5f < Time.time)
+        if(tempopowerupinvencible + 5f > Time.time)
+        {
+
+            if (timeLeftInvincible > 0)
+            {
+                timerInvincible += Time.deltaTime;
+
+                if (timerInvincible >= 1f)
+                {
+                    timeLeftInvincible--;
+                    timerInvincible = 0f;
+                }
+
+                GameController.instancia.TempoDoPowerUp(2, timeLeftInvincible);
+            }
+
+        }
+        if (tempopowerupinvencible + 5f < Time.time)
         {
             isIndestructuble = false;
+            GameController.instancia.TempoDoPowerUp(2, 0);
         }
     }
 
@@ -185,6 +233,7 @@ public class MovingThings : MonoBehaviour
                 slowedTimer = Time.time;
                 playerSpeed = 2;
                 contato++;
+                Gravidade = -10;
                 if (contato == 4)
                 {
                     myLane--;
@@ -198,6 +247,7 @@ public class MovingThings : MonoBehaviour
                 slowedTimer = Time.time;
                 playerSpeed = 2;
                 contato++;
+                Gravidade = -10;
                 if (contato == 4)
                 {
                     myLane++;
@@ -223,11 +273,15 @@ public class MovingThings : MonoBehaviour
                     Destroy(other.gameObject);
                     tempopowerupmult = Time.time;
                     Score.multiplyer = 2;
+                    number = 12;
+                    timeLeftMultiplier = 12;
                     break;
                 case 2:
                     Destroy(other.gameObject);
                     tempopowerupinvencible = Time.time;
                     isIndestructuble = true;
+                    number = 5;
+                    timeLeftInvincible = 5;
                     break;
             }
             /*if (numerodoid == 1)
