@@ -776,8 +776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad76387397593840bbc5e696063f39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
+  musicSource: {fileID: 265008920}
+  sfxSource: {fileID: 1670853096}
   jump: {fileID: 8300000, guid: 1622cfd49fff7444793565e3c5224026, type: 3}
   mainMusic: {fileID: 8300000, guid: 65cda70cca330bb44a9efe17de701d43, type: 3}
   audios: []
