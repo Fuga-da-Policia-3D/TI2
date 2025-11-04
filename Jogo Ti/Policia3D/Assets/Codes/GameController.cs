@@ -96,7 +96,7 @@ public class GameController : MonoBehaviour
 
     public void TempoDoPowerUp(int ID, float Tempo)
     {
-        if (ID == 1) // Multiplier
+        if (ID == 1) 
         {
             if (Tempo <= 0)
             {
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
                 multiplierText = "Multiplier: " + Mathf.CeilToInt(Tempo) + "s";
             }
         }
-        else if (ID == 2) // Invincibility
+        else if (ID == 2) 
         {
             if (Tempo <= 0)
             {
@@ -121,7 +121,7 @@ public class GameController : MonoBehaviour
 
 
 
-        // Combine both texts, skipping empty ones
+       
         string combined = "";
 
         if (!string.IsNullOrEmpty(multiplierText))

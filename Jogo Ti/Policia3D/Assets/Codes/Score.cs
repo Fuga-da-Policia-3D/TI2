@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public static int scoreCalculo = 0;         // Distance-based score
+    public static int scoreCalculo = 0;         
     public static int coinsCalculo = 0;         // Separate coin count
     public static int multiplyer = 1;           // Score multiplier
 
-    private float lastXPosition = 0f;           // Last recorded X position
-    private float scoreAccumulator = 0f;        // Tracks exact distance to avoid rounding errors
+    private float lastXPosition = 0f;           
+    private float scoreAccumulator = 0f;        
 
     private void Start()
     {
@@ -37,10 +37,10 @@ public class Score : MonoBehaviour
 
         if (distanceMoved > 0f)
         {
-            // Accumulate distance
+            
             scoreAccumulator += distanceMoved * multiplyer;
 
-            // Add score in whole number steps (e.g. every 1 unit of distance * multiplier)
+            
             int pointsToAdd = Mathf.FloorToInt(scoreAccumulator);
             if (pointsToAdd > 0)
             {
