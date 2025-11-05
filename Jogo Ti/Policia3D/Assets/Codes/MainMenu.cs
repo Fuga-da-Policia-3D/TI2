@@ -163,24 +163,33 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 100;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
+            PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
+
         }
         else if (Upgradeinivicivel.value == 2 && Score.coinsCalculo >= 100)
         {
             Score.coinsCalculo -= 100;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
+            PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
         else if (Upgradeinivicivel.value == 3 && Score.coinsCalculo >= 100)
         {
             Score.coinsCalculo -= 100;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
+            PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
         else if (Upgradeinivicivel.value == 4 && Score.coinsCalculo >= 100)
         {
             Score.coinsCalculo -= 100;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
+            PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
     }
 

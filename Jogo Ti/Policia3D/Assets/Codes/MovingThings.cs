@@ -26,7 +26,7 @@ public class MovingThings : MonoBehaviour
     private float timer;
 
     float timerMultiplier = 0f;
-    int timeLeftMultiplier = 12 ;
+    int timeLeftMultiplier = 16 ;
     int upgradeTimerMult = 0;
     bool aplicadoTimerMult = false;
 
@@ -123,6 +123,7 @@ public class MovingThings : MonoBehaviour
                 }
                 aplicadoTimerMult = true;
                 GameController.instancia.TempoDoPowerUp(1, timeLeftMultiplier);
+                print(timeLeftMultiplier);
             }
 
         }
@@ -303,7 +304,7 @@ public class MovingThings : MonoBehaviour
                     tempopowerupmult = Time.time;
                     Score.multiplyer = 2;
                     number = 12;
-                    timeLeftMultiplier = 12;
+                    timeLeftMultiplier = 12 + upgradeTimerMult;
                     break;
                 case 2:
                     aM.PlaySFX(aM.invincible);
@@ -311,7 +312,7 @@ public class MovingThings : MonoBehaviour
                     tempopowerupinvencible = Time.time;
                     isIndestructuble = true;
                     number = 5;
-                    timeLeftInvincible = 5;
+                    timeLeftInvincible = 5 + upgradeTimerInvincible;
                     break;
             }
             /*if (numerodoid == 1)
