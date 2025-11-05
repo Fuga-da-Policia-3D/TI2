@@ -229,6 +229,7 @@ public class MovingThings : MonoBehaviour
 
             if (Vector3.Dot(normal, Vector3.forward) > 0.5f)
             {
+                aM.PlaySFX(aM.grunt);
                 Debug.Log("Hit from behind");
                 slowedTimer = Time.time;
                 playerSpeed = 2;
@@ -243,6 +244,7 @@ public class MovingThings : MonoBehaviour
             }
             else if (Vector3.Dot(normal, Vector3.back) > 0.5f)
             {
+                aM.PlaySFX(aM.grunt);
                 Debug.Log("Hit from the front");
                 slowedTimer = Time.time;
                 playerSpeed = 2;
@@ -270,6 +272,7 @@ public class MovingThings : MonoBehaviour
             switch (numerodoid)
             {
                 case 1:
+                    aM.PlaySFX(aM.multiplier);
                     Destroy(other.gameObject);
                     tempopowerupmult = Time.time;
                     Score.multiplyer = 2;
@@ -277,6 +280,7 @@ public class MovingThings : MonoBehaviour
                     timeLeftMultiplier = 12;
                     break;
                 case 2:
+                    aM.PlaySFX(aM.invincible);
                     Destroy(other.gameObject);
                     tempopowerupinvencible = Time.time;
                     isIndestructuble = true;

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    AudioManager audioManager;
     //private Rigidbody rb;
     //private float forceamount = 10f;
     /*void Start()
@@ -30,6 +31,11 @@ public class Player : MonoBehaviour
         }
     }*/
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -37,12 +43,14 @@ public class Player : MonoBehaviour
             Vector3 normal = contact.normal;
             if (Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
             {
+                audioManager.PlaySFX(audioManager.grunt);
                 Debug.Log("Hit from the left side");
                 Time.timeScale = 0;
                 GameOver.instacia.GameOverScreen();
             }
             else if (Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
             {
+                audioManager.PlaySFX(audioManager.grunt);
                 Debug.Log("Hit from the right side");
                 Time.timeScale = 0;
                 GameOver.instacia.GameOverScreen();
@@ -60,12 +68,14 @@ public class Player : MonoBehaviour
 
         if (Vector3.Dot(direction, Vector3.right) > 0.5f && other.gameObject.tag == "Obstacle")
         {
+            audioManager.PlaySFX(audioManager.grunt);
             Debug.Log("Triggered on the right side");
             Time.timeScale = 0;
             GameOver.instacia.GameOverScreen();
         }
         else if (Vector3.Dot(direction, Vector3.left) > 0.5f && other.gameObject.tag == "Obstacle")
         {
+            audioManager.PlaySFX(audioManager.grunt);
             Debug.Log("Triggered on the left side");
             Time.timeScale = 0;
             GameOver.instacia.GameOverScreen();

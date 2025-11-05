@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     //public AudioSource musicSource;
     public AudioClip jump;
     public AudioClip mainMusic;
+    public AudioClip grunt;
+    public AudioClip coin;
+    public AudioClip invincible;
+    public AudioClip multiplier;
     public AudioClip[] audios;
     public AudioMixer mixer;
     public Slider masterSlider, musicSlider, sfxSlider;

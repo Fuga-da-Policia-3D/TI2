@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    AudioManager aM;
     public static int scoreCalculo = 0;         
     public static int coinsCalculo = 0;         // Separate coin count
     public static int multiplyer = 1;           // Score multiplier
@@ -14,6 +15,10 @@ public class Score : MonoBehaviour
     {
         lastXPosition = transform.position.x;
     }
+    private void Awake()
+    {
+        aM = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Update()
     {
@@ -24,6 +29,7 @@ public class Score : MonoBehaviour
     {
         if (other.CompareTag("Moedas"))
         {
+            aM.PlaySFX(aM.coin);
             coinsCalculo++;
             Destroy(other.gameObject);
             GameController.instancia.CoinCount();
