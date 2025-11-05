@@ -26,11 +26,14 @@ public class MovingThings : MonoBehaviour
     private float timer;
 
     float timerMultiplier = 0f;
-    int timeLeftMultiplier = 12;
+    int timeLeftMultiplier = 12 ;
+    int upgradeTimerMult = 0;
+    bool aplicadoTimerMult = false;
 
     float timerInvincible = 0f;
-    int timeLeftInvincible = 5;
-
+    int timeLeftInvincible = 5 ;
+    int upgradeTimerInvincible = 0;
+    bool aplicadoTimerInv = false;
 
 
     private float tempopowerupmult = -13;
@@ -61,6 +64,18 @@ public class MovingThings : MonoBehaviour
         contato = 0;
         cc = GetComponent<CharacterController>();
         inicialY = this.gameObject.transform.position.y;
+        if (PlayerPrefs.HasKey("PowerUPtempoMult"))
+        {
+            upgradeTimerMult = PlayerPrefs.GetInt("PowerUPtempoMult");
+            timeLeftMultiplier += upgradeTimerMult;
+            tempopowerupmult -= upgradeTimerMult;
+        }
+        if (PlayerPrefs.HasKey("PowerUPtempoInv"))
+        {
+            upgradeTimerInvincible = PlayerPrefs.GetInt("PowerUPtempoInv");
+            timeLeftInvincible += upgradeTimerInvincible;
+            tempopowerupinvencible -= upgradeTimerInvincible;
+        }
 
     }
     void Update()
@@ -93,7 +108,8 @@ public class MovingThings : MonoBehaviour
             isSlowed = false;
             contato = 0;
         }
-        if(tempopowerupmult + 12f > Time.time)
+       
+        if(tempopowerupmult + 12f + upgradeTimerMult > Time.time)
         {
 
             if (timeLeftMultiplier > 0)
@@ -105,17 +121,22 @@ public class MovingThings : MonoBehaviour
                     timeLeftMultiplier--;
                     timerMultiplier = 0f;
                 }
-
+                aplicadoTimerMult = true;
                 GameController.instancia.TempoDoPowerUp(1, timeLeftMultiplier);
             }
 
         }
-        if(tempopowerupmult + 12f < Time.time)
+        if(tempopowerupmult + 12f + upgradeTimerMult < Time.time)
         {
             Score.multiplyer = 1;
+            if (aplicadoTimerMult)
+            {
+                timeLeftMultiplier = 12 + upgradeTimerMult;
+                aplicadoTimerMult = false;
+            }
             GameController.instancia.TempoDoPowerUp(1, 0);
         }
-        if(tempopowerupinvencible + 5f > Time.time)
+        if(tempopowerupinvencible + 5f + upgradeTimerInvincible > Time.time)
         {
 
             if (timeLeftInvincible > 0)
@@ -127,14 +148,19 @@ public class MovingThings : MonoBehaviour
                     timeLeftInvincible--;
                     timerInvincible = 0f;
                 }
-
+                aplicadoTimerInv = true;
                 GameController.instancia.TempoDoPowerUp(2, timeLeftInvincible);
             }
 
         }
-        if (tempopowerupinvencible + 5f < Time.time)
+        if (tempopowerupinvencible + 5f + upgradeTimerInvincible < Time.time)
         {
             isIndestructuble = false;
+            if (aplicadoTimerInv)
+            {
+                timeLeftInvincible = 5 + upgradeTimerInvincible;
+                aplicadoTimerInv = false;
+            }
             GameController.instancia.TempoDoPowerUp(2, 0);
         }
     }
