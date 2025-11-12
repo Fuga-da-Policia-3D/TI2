@@ -10,7 +10,9 @@ public class MainMenu : MonoBehaviour
     public GameObject loja;
     public GameObject creditos;
     public GameObject soundConfig;
-    public TextMeshProUGUI textomoney;
+    public TextMeshProUGUI textomoney,textomoneyback;
+    public TextMeshProUGUI costMult;
+    public TextMeshProUGUI costInv;
 
     public int upgradetempoI = 0,upgradetempoM=0,maismult = 0;
     public Slider Upgradeinivicivel, Upgrademult;
@@ -34,6 +36,52 @@ public class MainMenu : MonoBehaviour
         {
             Upgradeinivicivel.value = PlayerPrefs.GetFloat("ValordoUpgradeInv");
         }
+        
+
+    }
+
+    private void Update()
+    {
+        if (Upgrademult.value == 0)
+        {
+            costMult.text = "Cost: 100 Coins";
+        }
+        if (Upgrademult.value == 1)
+        {
+            costMult.text = "Cost: 500 Coins";
+        }
+        if (Upgrademult.value == 2)
+        {
+            costMult.text = "Cost: 1000 Coins";
+        }
+        if (Upgrademult.value == 3)
+        {
+            costMult.text = "Cost: 2000 Coins";
+        }
+        if (Upgrademult.value == 4)
+        {
+            costMult.text = "Cost: 5000 Coins";
+        }
+        if (Upgradeinivicivel.value == 0)
+        {
+            costInv.text = "Cost: 100 Coins";
+        }
+        if (Upgradeinivicivel.value == 1)
+        {
+            costInv.text = "Cost: 500 Coins";
+        }
+        if (Upgradeinivicivel.value == 2)
+        {
+            costInv.text = "Cost: 1000 Coins";
+        }
+        if (Upgradeinivicivel.value == 3)
+        {
+            costInv.text = "Cost: 2000 Coins";
+        }
+        if (Upgradeinivicivel.value == 4)
+        {
+            costInv.text = "Cost: 5000 Coins";
+        }
     }
 
 
@@ -46,6 +94,7 @@ public class MainMenu : MonoBehaviour
     public void CoinCount()
     {
         textomoney.text = "Coins:" + Score.coinsCalculo.ToString();
+        textomoneyback.text = "Coins:" + Score.coinsCalculo.ToString();
         PlayerPrefs.SetInt("Coins", Score.coinsCalculo);
         PlayerPrefs.Save();
     }
@@ -107,9 +156,9 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("ValorDoUpgradeMult", Upgrademult.value);
             
         }
-        else if (Upgrademult.value == 1 && Score.coinsCalculo >= 100)
+        else if (Upgrademult.value == 1 && Score.coinsCalculo >= 500)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 500;
             CoinCount();
             Upgrademult.value += 1;
             upgradetempoM = 2;
@@ -117,9 +166,9 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("ValorDoUpgradeMult", Upgrademult.value);
 
         }
-        else if(Upgrademult.value == 2 && Score.coinsCalculo >= 100)
+        else if(Upgrademult.value == 2 && Score.coinsCalculo >= 1000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 1000;
             CoinCount();
             Upgrademult.value += 1;
             upgradetempoM = 3;
@@ -127,18 +176,18 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("ValorDoUpgradeMult", Upgrademult.value);
 
         }
-        else if(Upgrademult.value == 3 && Score.coinsCalculo >= 100)
+        else if(Upgrademult.value == 3 && Score.coinsCalculo >= 2000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 2000;
             CoinCount();
             Upgrademult.value += 1;
             upgradetempoM = 4;
             PlayerPrefs.SetInt("PowerUPtempoMult", upgradetempoM);
             PlayerPrefs.SetFloat("ValorDoUpgradeMult", Upgrademult.value);
         }
-        else if(Upgrademult.value == 4 && Score.coinsCalculo >= 100)
+        else if(Upgrademult.value == 4 && Score.coinsCalculo >= 5000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 5000;
             CoinCount();
             Upgrademult.value += 1;
             upgradetempoM = 5;
@@ -158,34 +207,34 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
-        else if(Upgradeinivicivel.value == 1 && Score.coinsCalculo >= 100)
+        else if(Upgradeinivicivel.value == 1 && Score.coinsCalculo >= 500)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 500;
             CoinCount();
             Upgradeinivicivel.value += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
 
         }
-        else if (Upgradeinivicivel.value == 2 && Score.coinsCalculo >= 100)
+        else if (Upgradeinivicivel.value == 2 && Score.coinsCalculo >= 1000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 1000;
             CoinCount();
             Upgradeinivicivel.value += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
-        else if (Upgradeinivicivel.value == 3 && Score.coinsCalculo >= 100)
+        else if (Upgradeinivicivel.value == 3 && Score.coinsCalculo >= 2000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 2000;
             CoinCount();
             Upgradeinivicivel.value += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
-        else if (Upgradeinivicivel.value == 4 && Score.coinsCalculo >= 100)
+        else if (Upgradeinivicivel.value == 4 && Score.coinsCalculo >= 5000)
         {
-            Score.coinsCalculo -= 100;
+            Score.coinsCalculo -= 5000;
             CoinCount();
             Upgradeinivicivel.value += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);

@@ -14,6 +14,8 @@ public class CopActions : MonoBehaviour
     private int distanciadecadaacao;
     private bool policialAtacando;
 
+    private int[] posicoeslane = { 10, 5, 0, -5, -10 };
+
     public Vector3 offset = new Vector3(-2, 0, 0);
 
     private void Start()
@@ -85,6 +87,42 @@ public class CopActions : MonoBehaviour
         tempodeataque = Time.time;
         if (contador == 0)
         {
+            int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
+            if(random == 0)
+            {
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 2]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 3]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 4]), transform.rotation);
+            }
+            if (random == 1)
+            {
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 2]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 3]), transform.rotation);
+            }
+            if (random == 2)
+            {
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 2]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 2]), transform.rotation);
+            }
+            if (random == 3)
+            {
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 3]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 2]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 1]), transform.rotation);
+            }
+            if (random == 4)
+            {
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 1]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 2]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 3]), transform.rotation);
+                Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random - 4]), transform.rotation);
+            }
             Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, playerlocation.transform.position.z), transform.rotation);
             contador++;
             AtaquesTotal++;
