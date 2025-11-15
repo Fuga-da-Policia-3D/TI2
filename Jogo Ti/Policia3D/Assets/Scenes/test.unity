@@ -343,6 +343,8 @@ MonoBehaviour:
   - {fileID: 6483102174384289083, guid: a983e5708cc309642a1459471c953cad, type: 3}
   - {fileID: 6483102174384289083, guid: 1debbc9ad2d02f844a7cda68c38952e1, type: 3}
   - {fileID: 6483102174384289083, guid: f1eb4d2a236513d49a8ec747413b500f, type: 3}
+  - {fileID: 5263901071669842613, guid: 1c3b85ca1ac10d54baa6fbb92e0a34c6, type: 3}
+  - {fileID: 5263901071669842613, guid: f3d2c3e98b0711449ae734340c48a22e, type: 3}
   caminhopolicail: {fileID: 6483102174384289083, guid: 1dcf95994f7baff46b0835161c1fcf1b, type: 3}
   kill:
   - {fileID: 0}
