@@ -46,9 +46,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8424507304232449047}
+  - component: {fileID: 4336649770031400546}
   m_Layer: 0
   m_Name: SpawndoProximoCenaru
-  m_TagString: Untagged
+  m_TagString: SpawnProximoCenario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,12 +63,33 @@ Transform:
   m_GameObject: {fileID: 2541546516695114668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 445.8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 442.43, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 11.737, z: 23.924}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6229671876063880189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4336649770031400546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541546516695114668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4642931191470280205
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +102,7 @@ GameObject:
   - component: {fileID: 8400799182146394629}
   m_Layer: 0
   m_Name: TriggerdoCenario
-  m_TagString: Untagged
+  m_TagString: TriggerCenario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

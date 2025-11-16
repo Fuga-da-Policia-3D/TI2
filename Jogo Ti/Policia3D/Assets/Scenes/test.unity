@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 25225174}
   - component: {fileID: 25225176}
   - component: {fileID: 25225177}
+  - component: {fileID: 25225179}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -422,6 +423,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &25225179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25225164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1fd2971fa39714c93eb267b8ef364b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cenario: {fileID: 2059527041332050364, guid: 9bad25bf8dcf4ab4fa326f3852481abf, type: 3}
+  Localproximocenario: {fileID: 0}
+  cenarioaserDestruido: {fileID: 0}
 --- !u!1 &29780293 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6483102174384289083, guid: 5fe805dbbf4729f408779c546126b725, type: 3}
@@ -2112,9 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaCaminhodestruir: 750
-  Cenarios:
-  - {fileID: 6529901418996340957, guid: 0023f65f678765b4c8355913049cd700, type: 3}
-  - {fileID: 6529901418996340957, guid: c35081af5e7e4d04abfb79e622210ded, type: 3}
+  Cenarios: []
   caminhoDireita: {fileID: 2074079430}
   caminhoEsquerda: {fileID: 1685569589}
 --- !u!4 &1679724805

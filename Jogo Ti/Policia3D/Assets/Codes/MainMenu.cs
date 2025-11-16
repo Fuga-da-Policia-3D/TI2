@@ -13,6 +13,8 @@ public class MainMenu : MonoBehaviour
     public TextMeshProUGUI textomoney,textomoneyback;
     public TextMeshProUGUI costMult;
     public TextMeshProUGUI costInv;
+    public GameObject lojaPersonagens;
+    public GameObject lojaUpgrades;
 
     public int upgradetempoI = 0,upgradetempoM=0,maismult = 0;
     public Slider Upgradeinivicivel, Upgrademult;
