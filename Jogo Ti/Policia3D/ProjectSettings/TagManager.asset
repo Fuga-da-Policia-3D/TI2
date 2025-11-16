@@ -10,6 +10,7 @@ TagManager:
   - Moedas
   - Audio
   - Especial
+  - TriggerCenario
   layers:
   - Default
   - TransparentFX
