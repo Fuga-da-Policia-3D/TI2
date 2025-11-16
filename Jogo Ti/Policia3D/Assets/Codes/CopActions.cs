@@ -17,6 +17,7 @@ public class CopActions : MonoBehaviour
     private int[] posicoeslane = { 10, 5, 0, -5, -10 };
 
     public Vector3 offset = new Vector3(-2, 0, 0);
+    public Vector3 offsetmaior = new Vector3(-5, -0, -0);
 
     private void Start()
     {
@@ -44,6 +45,14 @@ public class CopActions : MonoBehaviour
             
             transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
+        else
+        {
+            Vector3 targetPosition = playerlocation.transform.position + offsetmaior;
+
+
+            transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        }
 
         if(distanciadecadaacao <= playerlocation.transform.position.x && acaopolicial != 0)
         {
@@ -54,7 +63,8 @@ public class CopActions : MonoBehaviour
         }
         if (policialAtacando && acaopolicial == 0 && AtaquesTotal < 10) 
         {
-            AtaquePolicial();
+            int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
+            AtaquePolicial(random);
         }
         if(tempodeataque + 2.5f < Time.time)
         {
@@ -82,12 +92,12 @@ public class CopActions : MonoBehaviour
 
     }
 
-    public void AtaquePolicial()
+    public void AtaquePolicial(int random)
     {
         tempodeataque = Time.time;
         if (contador == 0)
         {
-            int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
+            
             if(random == 0)
             {
                 Instantiate(objdeataque[Random.Range(0, objdeataque.Length)], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[random + 1]), transform.rotation);

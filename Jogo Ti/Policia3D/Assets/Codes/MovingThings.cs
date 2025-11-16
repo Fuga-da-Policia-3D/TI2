@@ -123,7 +123,7 @@ public class MovingThings : MonoBehaviour
                 }
                 aplicadoTimerMult = true;
                 GameController.instancia.TempoDoPowerUp(1, timeLeftMultiplier);
-                print(timeLeftMultiplier);
+                
             }
 
         }
