@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e634a0dd2823eea4c8b33decad9a47d4
+guid: 75b5c6d212c6e274ca32dad2582f5222
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,12 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BusStop
+      name: Leaves
+    second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
     second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
   materials:
     materialImportMode: 2

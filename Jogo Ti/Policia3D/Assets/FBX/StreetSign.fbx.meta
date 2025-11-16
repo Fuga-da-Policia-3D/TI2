@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: e634a0dd2823eea4c8b33decad9a47d4
+guid: da92949cb7982c14eb4d38f81b48d988
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BusStop
-    second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
