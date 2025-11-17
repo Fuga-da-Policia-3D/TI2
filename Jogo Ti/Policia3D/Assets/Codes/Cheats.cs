@@ -47,48 +47,44 @@ public class Cheats : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Ended)
             {
+                float moveDistance = (touch.position - touchStartPos).magnitude;
 
-                float moveDistance = (touch.position - touchStartPos).magnitude;//Verifica se a pessoa ta fazendo um swipe ao invez de um touch
-
-
-                if (moveDistance < maxTapMovement)
+                if (moveDistance < maxTapMovement)  // valid tap
                 {
                     float timeNow = Time.time;
 
                     if (timeNow - lastTapTime < 0.3f)
-                    {
                         tapCount++;
-                    }
                     else
-                    {
                         tapCount = 1;
-                    }
 
                     lastTapTime = timeNow;
 
-                    if (!iswaiting)//isso daqui e para fazer com que os tap count não se atrapalhem
-                    {
-                        iswaiting = true;
-                        Invoke("ProcessTap", tapdelay);
-                    }
+                    // START countdown after the last tap
+                    CancelInvoke("ProcessTap");
+                    Invoke("ProcessTap", 0.3f);
                 }
             }
         }
-
     }
 
 
     void ProcessTap()
     {
-        
+        // CHEATS
         if (tapCount == 5)
         {
             PlayerPrefs.SetInt("PowerUPtempoInv", 100000);
+            Debug.Log("Cheat 5 taps activated!");
         }
-        else if (tapCount == 4)// dependendo da cena faz algo diferente ja na cena 0 que é a sena 1 ela fica mudando aleatoriamente entre materiais podendo ate cair no mesmo material
+        else if (tapCount == 4)
         {
             Score.coinsCalculo += 999999;
+            Debug.Log("Cheat 4 taps activated!");
         }
-        
+
+        // reset for next cheat
+        tapCount = 0;
     }
+
 }
