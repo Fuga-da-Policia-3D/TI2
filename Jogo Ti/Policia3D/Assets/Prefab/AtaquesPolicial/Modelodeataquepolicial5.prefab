@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2103626413499638504}
   - component: {fileID: 1566226259230640335}
   - component: {fileID: -7018427058454564469}
+  - component: {fileID: -5575330573621860253}
   m_Layer: 0
   m_Name: Modelodeataquepolicial5
   m_TagString: Obstacle
@@ -82,6 +83,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-5575330573621860253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653864373963027411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cb22fefc6d68c42a70379c50de3e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  rb: {fileID: 0}
 --- !u!1001 &1348647897007498242
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,11 +19,7 @@ public class CopActions : MonoBehaviour
     private int distanciadecadaacao;
     private bool policialAtacando;
 
-    public GameObject[] animaisataque;
-    private float tempodanimais;
-    private int acaopoanimal;
-    private int distaciadeacaoanimal;
-    private bool policialanimal;
+    
 
     private int[] posicoeslane = { 10, 5, 0, -5, -10 };
 
@@ -33,20 +29,20 @@ public class CopActions : MonoBehaviour
     private void Start()
     {
         acaopolicial = Random.Range(1, 4);
-        acaopoanimal = Random.Range(1, 4);
+        
         switch (acaopolicial)
         {
             case 1:
-                distanciadecadaacao = 800;
-                distaciadeacaoanimal = 100;
+                distanciadecadaacao = 400;
+                
                 break;
             case 2:
-                distanciadecadaacao = 900;
-                distaciadeacaoanimal = 200;
+                distanciadecadaacao = 500;
+                
                 break;
             case 3:
-                distanciadecadaacao = 1000;
-                distaciadeacaoanimal = 300;
+                distanciadecadaacao = 600;
+                
                 break;
 
         }
@@ -81,34 +77,17 @@ public class CopActions : MonoBehaviour
             acaopolicial = 0;
             contador = 0;
         }
-        if(distaciadeacaoanimal <= playerlocation.transform.position.x && acaopoanimal != 0)
-        {
-            PathMaking.pathafazer = 2;
-            policialanimal = true;
-            acaopoanimal = 0;
-            contAnim = 0;
-
-        }
-        if(policialanimal && acaopolicial == 0 && AtaquesTotalanimal < 5)
-        {
-            int random = Random.Range(0, animaisataque.Length);
-            AtaqueAnimalPolicial(random);
-        }
+       
+        
         if (policialAtacando && acaopolicial == 0 && AtaquesTotal < 10) 
         {
             int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
             AtaquePolicial(random);
         }
-        if(tempodanimais + 2.5f < Time.time)
-        {
-            policialAtacando = false;
-            policialanimal = true;
-            contador = 0;
-        }
+        
         if(tempodeataque + 2.5f < Time.time)
         {
             policialAtacando = true;
-            policialanimal = false;
             contador = 0;
         }
         if(AtaquesTotalanimal >= 5)
@@ -124,15 +103,15 @@ public class CopActions : MonoBehaviour
             {
                 case 1:
                     distanciadecadaacao += 1400;
-                    distaciadeacaoanimal += 700;
+                    
                     break;
                 case 2:
                     distanciadecadaacao += 1500;
-                    distaciadeacaoanimal += 900;
+                    
                     break;
                 case 3:
                     distanciadecadaacao += 1600;
-                    distaciadeacaoanimal += 1100;
+                    
                     break;
             }
             AtaquesTotal = 0;
@@ -189,43 +168,5 @@ public class CopActions : MonoBehaviour
     }
 
 
-    public void AtaqueAnimalPolicial(int random)
-    {
-        tempodanimais = Time.time;
-        if(contAnim == 0)
-        {
-            if(random == 0)//pombo
-            {
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[0]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[1]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[2]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[3]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[4]), transform.rotation);
-            }
-            if (random == 1)//superdoggo
-            {
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[0]), transform.rotation);
-            }
-            if (random == 2)//porco-espinho
-            {
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[0]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[1]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[2]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[3]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[4]), transform.rotation);
-            }
-            if (random == 3)//porco
-            {
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[0]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[1]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[2]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[3]), transform.rotation);
-                Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[4]), transform.rotation);
-            }
-
-            contAnim++;
-            AtaquesTotalanimal++;
-        }
-        policialanimal = false;
-    }
+   
 }

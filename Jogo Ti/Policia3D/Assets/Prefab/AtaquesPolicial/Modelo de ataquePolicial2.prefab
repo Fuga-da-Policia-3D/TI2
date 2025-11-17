@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1892693154173096730}
   - component: {fileID: -4307051906020816555}
   - component: {fileID: 336397958415069173}
+  - component: {fileID: -4094184728655369873}
   m_Layer: 0
   m_Name: Modelo de ataquePolicial2
   m_TagString: Obstacle
@@ -82,6 +83,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.71
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4094184728655369873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370436179159721849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cb22fefc6d68c42a70379c50de3e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  rb: {fileID: 0}
 --- !u!1001 &1950653039716711688
 PrefabInstance:
   m_ObjectHideFlags: 0
