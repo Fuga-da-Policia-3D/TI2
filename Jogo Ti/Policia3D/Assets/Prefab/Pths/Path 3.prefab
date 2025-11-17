@@ -701,6 +701,10 @@ PrefabInstance:
       value: TI2_GabrielTorres.fbx_Bus
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fd325c28d51772d469490d2922865396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd325c28d51772d469490d2922865396, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -836,6 +840,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8b5c86bd4c51907469bd10f7a5084fbd, type: 3}
       propertyPath: m_Name
       value: AssetsMatheus2.fbx_Cone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b5c86bd4c51907469bd10f7a5084fbd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b5c86bd4c51907469bd10f7a5084fbd, type: 3}
       propertyPath: m_TagString
@@ -2236,6 +2244,10 @@ PrefabInstance:
       value: AssetsMatheus2.fbx_Cone (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b5c86bd4c51907469bd10f7a5084fbd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b5c86bd4c51907469bd10f7a5084fbd, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -2526,6 +2538,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18c1249d21d5112498ba65147d75394b, type: 3}
       propertyPath: m_Name
       value: Madeira.fbx_Collection
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18c1249d21d5112498ba65147d75394b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 18c1249d21d5112498ba65147d75394b, type: 3}
       propertyPath: m_TagString

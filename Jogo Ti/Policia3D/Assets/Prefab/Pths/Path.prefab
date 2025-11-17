@@ -942,6 +942,10 @@ PrefabInstance:
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Light_Post
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -1320,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0601212acdd0abb4791861a9378cba92, type: 3}
       propertyPath: m_Name
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Trash_Cans
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0601212acdd0abb4791861a9378cba92, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0601212acdd0abb4791861a9378cba92, type: 3}
       propertyPath: m_TagString

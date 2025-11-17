@@ -662,6 +662,10 @@ PrefabInstance:
       value: AssetsMatheus.fbx_Arbusto_Baixo
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d12115d6264d603489d9e0910542423b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d12115d6264d603489d9e0910542423b, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -1497,6 +1501,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a37ee4d840cb13c48a18779a4efc28e4, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a37ee4d840cb13c48a18779a4efc28e4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a37ee4d840cb13c48a18779a4efc28e4, type: 3}
       propertyPath: m_TagString

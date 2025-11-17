@@ -265,6 +265,10 @@ PrefabInstance:
       value: Car3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6e0eb18f1af73b9498ca148f63acff71, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e0eb18f1af73b9498ca148f63acff71, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -406,6 +410,10 @@ PrefabInstance:
       value: StreetTree
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -537,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7045288dd0d64534987c3dbb5ff96fde, type: 3}
       propertyPath: m_Name
       value: Camionete
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7045288dd0d64534987c3dbb5ff96fde, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7045288dd0d64534987c3dbb5ff96fde, type: 3}
       propertyPath: m_TagString
@@ -672,6 +684,10 @@ PrefabInstance:
       value: BusStop
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e634a0dd2823eea4c8b33decad9a47d4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e634a0dd2823eea4c8b33decad9a47d4, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -803,6 +819,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_Name
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Light_Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_TagString
@@ -944,6 +964,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cfcc923de49db6d45a955372c270f651, type: 3}
       propertyPath: m_Name
       value: AssetsMatheus.fbx_ArbustoAlto
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cfcc923de49db6d45a955372c270f651, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cfcc923de49db6d45a955372c270f651, type: 3}
       propertyPath: m_TagString
@@ -1147,6 +1171,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5075f4f3c92784a41969fab2243cff66, type: 3}
       propertyPath: m_Name
       value: Van
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5075f4f3c92784a41969fab2243cff66, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5075f4f3c92784a41969fab2243cff66, type: 3}
       propertyPath: m_TagString
@@ -1358,6 +1386,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5d29e1f54b7d56e4c8c710d15fbdcd1b, type: 3}
       propertyPath: m_Name
       value: PostBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d29e1f54b7d56e4c8c710d15fbdcd1b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5d29e1f54b7d56e4c8c710d15fbdcd1b, type: 3}
       propertyPath: m_TagString

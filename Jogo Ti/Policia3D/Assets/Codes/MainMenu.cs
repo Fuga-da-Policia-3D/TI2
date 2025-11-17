@@ -15,6 +15,16 @@ public class MainMenu : MonoBehaviour
     public TextMeshProUGUI costInv;
     public GameObject lojaPersonagens;
     public GameObject lojaUpgrades;
+    public GameObject skinCelector;
+    public GameObject controles;
+
+
+    public GameObject trocaimagemSkin1Buy;
+    public GameObject trocaimagemSkin1Boght;
+    public GameObject trocaimagemSkin3Buy;
+    public GameObject trocaimagemSkin3Boght;
+    public GameObject trocaimagemSkin4Buy;
+    public GameObject trocaimagemSkin4Boght;
 
     public int upgradetempoI = 0,upgradetempoM=0,maismult = 0;
     public Slider Upgradeinivicivel, Upgrademult;
@@ -84,6 +94,23 @@ public class MainMenu : MonoBehaviour
         {
             costInv.text = "Cost: 5000 Coins";
         }
+
+        if(PlayerPrefs.GetInt("Skin1Player") == 1)
+        {
+            trocaimagemSkin1Buy.SetActive(false);
+            trocaimagemSkin1Boght.SetActive(true);
+        }
+        
+        if (PlayerPrefs.GetInt("Skin2Player") == 1)
+        {
+            trocaimagemSkin3Buy.SetActive(false);
+            trocaimagemSkin3Boght.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Skin1Cop") == 1)
+        {
+            trocaimagemSkin4Buy.SetActive(false);
+            trocaimagemSkin4Boght.SetActive(true);
+        }
     }
 
 
@@ -114,12 +141,35 @@ public class MainMenu : MonoBehaviour
         loja.SetActive(true);
     }
 
+    public void LojaUpgrades()
+    {
+        lojaUpgrades.SetActive(true);
+        lojaPersonagens.SetActive(false);
+    }
+
+    public void LojaSkins()
+    {
+        lojaUpgrades.SetActive(false);
+        lojaPersonagens.SetActive(true);
+    }
+
     public void VoltandoLoja()
     {
         menuPrincial.SetActive(true);
         loja.SetActive(false);
     }
 
+    public void EntrandoSkin()
+    {
+        skinCelector.SetActive(true);
+        menuPrincial.SetActive(false);
+    }
+
+    public void SaindoSkin()
+    {
+        skinCelector.SetActive(false);
+        menuPrincial.SetActive(true);
+    }
 
     public void Sound()
     {
@@ -133,7 +183,17 @@ public class MainMenu : MonoBehaviour
         menuPrincial.SetActive(true);
     }
 
+    public void EntrarControles()
+    {
+        controles.SetActive(true);
+        menuPrincial.SetActive(false);
+    }
 
+    public void SairControles()
+    {
+        controles.SetActive(false);
+        menuPrincial.SetActive(true);
+    }
     public void EntrarCreditos()
     {
         creditos.SetActive(true);
@@ -206,6 +266,7 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 100;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            upgradetempoI += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
@@ -214,6 +275,7 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 500;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            upgradetempoI += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
 
@@ -223,6 +285,7 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 1000;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            upgradetempoI += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
@@ -231,6 +294,7 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 2000;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            upgradetempoI += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
@@ -239,10 +303,44 @@ public class MainMenu : MonoBehaviour
             Score.coinsCalculo -= 5000;
             CoinCount();
             Upgradeinivicivel.value += 1;
+            upgradetempoI += 1;
             PlayerPrefs.SetInt("PowerUPtempoInv", upgradetempoI);
             PlayerPrefs.SetFloat("ValordoUpgradeInv", Upgradeinivicivel.value);
         }
     }
+
+    public void ComprarSkin1()
+    {
+        if(Score.coinsCalculo >= 1000)
+        {
+            Score.scoreCalculo -= 1000;
+            int skincomprada = 1;
+            PlayerPrefs.SetInt("Skin1Player", skincomprada);
+        }
+    }
+
+    
+
+    public void ComprarSkin3()
+    {
+        if (Score.coinsCalculo >= 50000)
+        {
+            Score.scoreCalculo -= 50000;
+            int skincomprada = 1;
+            PlayerPrefs.SetInt("Skin2Player", skincomprada);
+        }
+    }
+
+    public void ComprarSkin4()
+    {
+        if (Score.coinsCalculo >= 30000)
+        {
+            Score.scoreCalculo -= 30000;
+            int skincomprada = 1;
+            PlayerPrefs.SetInt("Skin1Cop", skincomprada);
+        }
+    }
+
 
     public void ExitGame()
     {

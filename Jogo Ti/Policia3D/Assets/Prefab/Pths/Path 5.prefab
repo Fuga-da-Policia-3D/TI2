@@ -269,6 +269,10 @@ PrefabInstance:
       value: Car3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6e0eb18f1af73b9498ca148f63acff71, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e0eb18f1af73b9498ca148f63acff71, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -410,6 +414,10 @@ PrefabInstance:
       value: SpeedLimit
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0a2a6ee618547844a2b9a428f139fe0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0a2a6ee618547844a2b9a428f139fe0, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -543,6 +551,10 @@ PrefabInstance:
       value: StreetTree (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -674,6 +686,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_Name
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Light_Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_TagString
@@ -811,6 +827,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e634a0dd2823eea4c8b33decad9a47d4, type: 3}
       propertyPath: m_Name
       value: BusStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e634a0dd2823eea4c8b33decad9a47d4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e634a0dd2823eea4c8b33decad9a47d4, type: 3}
       propertyPath: m_TagString
@@ -1016,6 +1036,10 @@ PrefabInstance:
       value: TI2_GabrielTorres.fbx_Bus
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fd325c28d51772d469490d2922865396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd325c28d51772d469490d2922865396, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -1157,6 +1181,10 @@ PrefabInstance:
       value: Van
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5075f4f3c92784a41969fab2243cff66, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5075f4f3c92784a41969fab2243cff66, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -1288,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_Name
       value: StreetTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_TagString

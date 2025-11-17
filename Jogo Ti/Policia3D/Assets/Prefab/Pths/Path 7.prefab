@@ -262,6 +262,10 @@ PrefabInstance:
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Trash_Cans
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0601212acdd0abb4791861a9378cba92, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0601212acdd0abb4791861a9378cba92, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -403,6 +407,10 @@ PrefabInstance:
       value: StreetTree (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -534,6 +542,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
       propertyPath: m_Name
       value: TI2_GabrielTorres.fbx_ParkBench (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
       propertyPath: m_TagString
@@ -677,6 +689,10 @@ PrefabInstance:
       value: StreetTree
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6c1523797af23d408ed72732ff73f26, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -810,6 +826,10 @@ PrefabInstance:
       value: Camionete
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7045288dd0d64534987c3dbb5ff96fde, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7045288dd0d64534987c3dbb5ff96fde, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -941,6 +961,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_Name
       value: TI2 ASSETS (ComColorAtributeMAt).fbx_Light_Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d999ee08318a03e4d92619dbe65ca49d, type: 3}
       propertyPath: m_TagString
@@ -1144,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 92f33e7383bbe7d449f83f1f3d10e566, type: 3}
       propertyPath: m_Name
       value: Cacanba
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 92f33e7383bbe7d449f83f1f3d10e566, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 92f33e7383bbe7d449f83f1f3d10e566, type: 3}
       propertyPath: m_TagString
@@ -1357,6 +1385,10 @@ PrefabInstance:
       value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a37ee4d840cb13c48a18779a4efc28e4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a37ee4d840cb13c48a18779a4efc28e4, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -1488,6 +1520,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
       propertyPath: m_Name
       value: TI2_GabrielTorres.fbx_ParkBench
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1adf3d509fa121a45874cb77ff48fccf, type: 3}
       propertyPath: m_TagString
