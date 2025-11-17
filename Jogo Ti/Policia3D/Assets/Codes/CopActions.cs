@@ -4,10 +4,14 @@ public class CopActions : MonoBehaviour
 {
     public GameObject playerlocation;
     public float moveSpeed = 2.0f;
-    private int contador;
+    private int contador , contAnim;
     private int AtaquesTotal;
     private int AtaquesTotalanimal;
     //camera pos para salvar (-11.32,1.48,0) rotation (0,90,0)
+
+
+    private bool podeAtacarPolicial = true;
+    private bool podeAtacarAnimal = true;
 
     public GameObject[] objdeataque;
     private float tempodeataque;
@@ -16,10 +20,10 @@ public class CopActions : MonoBehaviour
     private bool policialAtacando;
 
     public GameObject[] animaisataque;
-    private float tempodeataqueanimais;
-    private int acaopolicialanimal;
+    private float tempodanimais;
+    private int acaopoanimal;
     private int distaciadeacaoanimal;
-    private bool policialAtacandoanimal;
+    private bool policialanimal;
 
     private int[] posicoeslane = { 10, 5, 0, -5, -10 };
 
@@ -29,6 +33,7 @@ public class CopActions : MonoBehaviour
     private void Start()
     {
         acaopolicial = Random.Range(1, 4);
+        acaopoanimal = Random.Range(1, 4);
         switch (acaopolicial)
         {
             case 1:
@@ -76,15 +81,15 @@ public class CopActions : MonoBehaviour
             acaopolicial = 0;
             contador = 0;
         }
-        if(distaciadeacaoanimal <= playerlocation.transform.position.x && acaopolicial != 0)
+        if(distaciadeacaoanimal <= playerlocation.transform.position.x && acaopoanimal != 0)
         {
             PathMaking.pathafazer = 2;
-            policialAtacandoanimal = true;
-            acaopolicial = 0;
-            contador = 0;
+            policialanimal = true;
+            acaopoanimal = 0;
+            contAnim = 0;
 
         }
-        if(policialAtacandoanimal && acaopolicial == 0 && AtaquesTotalanimal < 10)
+        if(policialanimal && acaopolicial == 0 && AtaquesTotalanimal < 5)
         {
             int random = Random.Range(0, animaisataque.Length);
             AtaqueAnimalPolicial(random);
@@ -94,21 +99,22 @@ public class CopActions : MonoBehaviour
             int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
             AtaquePolicial(random);
         }
-        if(distaciadeacaoanimal + 2.5f < Time.time)
+        if(tempodanimais + 2.5f < Time.time)
         {
             policialAtacando = false;
-            policialAtacandoanimal = true;
+            policialanimal = true;
             contador = 0;
         }
         if(tempodeataque + 2.5f < Time.time)
         {
             policialAtacando = true;
-            policialAtacandoanimal = false;
+            policialanimal = false;
             contador = 0;
         }
-        if(AtaquesTotalanimal >= 10)
+        if(AtaquesTotalanimal >= 5)
         {
             PathMaking.pathafazer = 1;
+            AtaquesTotalanimal = 0;
         }
         if(AtaquesTotal >= 10)
         {
@@ -185,8 +191,8 @@ public class CopActions : MonoBehaviour
 
     public void AtaqueAnimalPolicial(int random)
     {
-        tempodeataqueanimais = Time.time;
-        if(contador == 0)
+        tempodanimais = Time.time;
+        if(contAnim == 0)
         {
             if(random == 0)//pombo
             {
@@ -217,9 +223,9 @@ public class CopActions : MonoBehaviour
                 Instantiate(animaisataque[random], new Vector3(playerlocation.transform.position.x + 60, 2, posicoeslane[4]), transform.rotation);
             }
 
-            contador++;
+            contAnim++;
             AtaquesTotalanimal++;
         }
-        policialAtacandoanimal = false;
+        policialanimal = false;
     }
 }
