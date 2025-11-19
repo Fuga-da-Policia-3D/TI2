@@ -3,8 +3,12 @@ using UnityEngine;
 public class VerificarSkinPlayerCop : MonoBehaviour
 {
     public GameObject skinplay0;
+    public GameObject skin0normalinv;
+    public GameObject skin0zfight;
     public GameObject skinplay1;
     public GameObject skinplay2;
+
+
 
     public GameObject skincop0;
     public GameObject skincop1;
@@ -42,5 +46,22 @@ public class VerificarSkinPlayerCop : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Especial")
+        {
+            other.TryGetComponent<PowerUps>(out PowerUps powerUp);
+            int numerodoid = powerUp.PowerUpID();
+            switch (numerodoid)
+            {
+                case 1:
+                    skinplay0.SetActive(false);
+                    skin0normalinv.SetActive(true);//arrmar para ver as coisas
+                    break;
+            }
+        }
+    }
+
+
+
 }

@@ -66,10 +66,6 @@ public class CopActions : MonoBehaviour
 
         }
 
-
-
-
-
         if(distanciadecadaacao <= playerlocation.transform.position.x && acaopolicial != 0)
         {
             PathMaking.pathafazer = 2;
@@ -85,7 +81,7 @@ public class CopActions : MonoBehaviour
             AtaquePolicial(random);
         }
         
-        if(tempodeataque + 2.5f < Time.time)
+        if(tempodeataque + 3.5f < Time.time)
         {
             policialAtacando = true;
             contador = 0;

@@ -191,7 +191,7 @@ public class MovingThings : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
-            Jump();
+            Jump();//Ultilizar o bezer para fazer um pulo melhor
         }
         if (Input.GetKeyDown(KeyCode.S) && !isscale && isGround)
         {
