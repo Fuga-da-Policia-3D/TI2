@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b842ba52129c1f2478106ad3ab24ad17
+guid: 24577db062c62c34684590d827bf24da
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,12 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leaves
-    second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: c7d0b184da6624647bca3f22922923d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood
+      name: Metal
+    second: {fileID: 2100000, guid: c7d0b184da6624647bca3f22922923d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber
     second: {fileID: 2100000, guid: 07dfc796ed0c2e74c89e06733f268d23, type: 2}
   materials:
     materialImportMode: 2

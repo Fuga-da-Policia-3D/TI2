@@ -12,6 +12,8 @@ TagManager:
   - Especial
   - TriggerCenario
   - SpawnProximoCenario
+  - Normal
+  - Inverted
   layers:
   - Default
   - TransparentFX
