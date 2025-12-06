@@ -24,6 +24,7 @@ public class MovingThings : MonoBehaviour
     [SerializeField] float forcadePulo = 5f;
     private int number;
     private float timer;
+    public static bool pausado = false;
 
     float timerMultiplier = 0f;
     int timeLeftMultiplier = 16 ;
@@ -181,11 +182,11 @@ public class MovingThings : MonoBehaviour
 
     void CheckKeyboardInputs()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && pausado == false)
         {
             MoveLeft();
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && pausado == false)
         {
             MoveRight();
         }
@@ -374,15 +375,23 @@ public class MovingThings : MonoBehaviour
                     if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
                     {
                         // Horizontal swipe
-                        if (delta.x > 0)
+                        if (delta.x > 0 )
                         {
                             Debug.Log("Swipe Right");
-                            MoveRight();
+                            if(pausado == false)
+                            {
+                                MoveRight();
+                            }
+                            
                         }
                         else
                         {
                             Debug.Log("Swipe Left");
-                            MoveLeft();
+                            if (pausado == false)
+                            {
+                                MoveLeft();
+                            }
+                                
                         }
                     }
                     else

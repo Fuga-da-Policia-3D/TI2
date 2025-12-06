@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Acoesanimais : MonoBehaviour
+public class DestruirObjetos : MonoBehaviour
 {
     
     
@@ -10,7 +10,7 @@ public class Acoesanimais : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        Destroy(this.gameObject,15);
+        Destroy(this.gameObject,30);
     }
     
 }

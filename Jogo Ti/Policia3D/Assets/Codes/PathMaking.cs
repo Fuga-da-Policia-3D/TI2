@@ -23,6 +23,24 @@ public class PathMaking : MonoBehaviour
     private void Start()
     {
         pathafazer = 1;
+       
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(29.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(49.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(69.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(89.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(109.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(129.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(149.59f, 0, 0), this.gameObject.transform.rotation);
+        rng = Random.Range(0, paths.Length);
+        Instantiate(paths[rng], new Vector3(169.59f, 0, 0), this.gameObject.transform.rotation);
+
     }
     private void Update()
     {
@@ -65,11 +83,11 @@ public class PathMaking : MonoBehaviour
            
             if(pathafazer == 1)
             {
-                Instantiate(paths[rng], new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
+                Instantiate(paths[rng], new Vector3(chaodetectado.x + 180 - 10, 0, 0), other.gameObject.transform.rotation);
             }
             else if(pathafazer == 2)
             {
-                Instantiate(caminhopolicail, new Vector3(chaodetectado.x + 80 - 10, 0, 0), other.gameObject.transform.rotation);
+                Instantiate(caminhopolicail, new Vector3(chaodetectado.x + 180 - 10, 0, 0), other.gameObject.transform.rotation);
             }
             
         }

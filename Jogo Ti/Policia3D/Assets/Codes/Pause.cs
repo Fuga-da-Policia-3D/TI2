@@ -18,6 +18,7 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseScreen();
+           
         }
     }
     public void PauseScreen()
@@ -27,11 +28,13 @@ public class Pause : MonoBehaviour
         {
             Time.timeScale = 0;
             PauseGame.SetActive(true);
+            MovingThings.pausado = true;
         }
         else
         {
             Time.timeScale = 1;
             PauseGame.SetActive(false);
+            MovingThings.pausado = false;
         }
     }
     public void Sair()
