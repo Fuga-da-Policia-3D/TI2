@@ -56,7 +56,7 @@ public class VerificarSkinPlayerCop : MonoBehaviour
             {
                 case 1:
                     skinplay0.SetActive(false);
-                    skin0normalinv.SetActive(true);//arrmar para ver as coisas
+                    skin0normalinv.SetActive(true);
                     break;
             }
         }

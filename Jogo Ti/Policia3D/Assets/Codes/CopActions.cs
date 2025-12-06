@@ -68,16 +68,17 @@ public class CopActions : MonoBehaviour
 
         if(distanciadecadaacao <= playerlocation.transform.position.x && acaopolicial != 0)
         {
-            PathMaking.pathafazer = 2;
+            PathMaking.pathafazer = 3;
             policialAtacando = true;
             acaopolicial = 0;
             contador = 0;
         }
        
         
-        if (policialAtacando && acaopolicial == 0 && AtaquesTotal < 10) 
+        if (policialAtacando && acaopolicial == 0 && AtaquesTotal < 10 && MovingThings.policialpodeatacar) 
         {
-            int random = Random.Range(0, posicoeslane.Length);//tem que arrumar
+            
+            int random = Random.Range(0, posicoeslane.Length);
             AtaquePolicial(random);
         }
         
@@ -86,27 +87,24 @@ public class CopActions : MonoBehaviour
             policialAtacando = true;
             contador = 0;
         }
-        if(AtaquesTotalanimal >= 5)
-        {
-            PathMaking.pathafazer = 1;
-            AtaquesTotalanimal = 0;
-        }
+        
         if(AtaquesTotal >= 10)
         {
             PathMaking.pathafazer = 1;
             acaopolicial = Random.Range(1, 4);
+            MovingThings.policialpodeatacar = false;
             switch (acaopolicial)
             {
                 case 1:
-                    distanciadecadaacao += 1400;
+                    distanciadecadaacao += 2400;
                     
                     break;
                 case 2:
-                    distanciadecadaacao += 1500;
+                    distanciadecadaacao += 2500;
                     
                     break;
                 case 3:
-                    distanciadecadaacao += 1600;
+                    distanciadecadaacao += 2600;
                     
                     break;
             }

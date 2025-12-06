@@ -4,7 +4,7 @@ public class PathMaking : MonoBehaviour
 {
     public GameObject[] paths;
     public GameObject caminhopolicail;
-    
+    public GameObject iniciarAtaquepolicial;
 
 
     private int rng;
@@ -88,6 +88,11 @@ public class PathMaking : MonoBehaviour
             else if(pathafazer == 2)
             {
                 Instantiate(caminhopolicail, new Vector3(chaodetectado.x + 180 - 10, 0, 0), other.gameObject.transform.rotation);
+            }
+            else if(pathafazer == 3)
+            {
+                pathafazer = 2;
+                Instantiate(iniciarAtaquepolicial, new Vector3(chaodetectado.x + 180 - 10, 0, 0), other.gameObject.transform.rotation);
             }
             
         }

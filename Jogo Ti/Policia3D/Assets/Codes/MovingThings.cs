@@ -40,6 +40,9 @@ public class MovingThings : MonoBehaviour
     private float tempopowerupmult = -13;
     private float tempopowerupinvencible = -6;
 
+
+    public static bool policialpodeatacar = false;
+
     public float acceleration = 2f;
     private bool isscale = false;
     public float scalespeed = 10f;
@@ -88,6 +91,14 @@ public class MovingThings : MonoBehaviour
         if (inputJump + temponoAr < Time.time && isGround == false)
         {
             Gravidade = -10f;
+        }
+        if(this.gameObject.transform.position.y >= 9.85)
+        {
+            Gravidade = -10f;//debugs
+        }
+        if(this.gameObject.transform.position.y <+ 0.80f)
+        {
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x,1.00f , this.gameObject.transform.position.z);//debugs
         }
         if (isscale)
         {
@@ -225,7 +236,7 @@ public class MovingThings : MonoBehaviour
     void SpeedUP()
     {
         float posicao = 1;
-        if(Score.scoreCalculo >= 0 && Score.scoreCalculo < 500)
+        if(Score.scoreCalculo >= 0 && Score.scoreCalculo < 100)
         {
             playerSpeed += 2f * Time.deltaTime;
             if(playerSpeed > 10)
@@ -233,7 +244,79 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 10f;
             }
         }
-        if (Score.scoreCalculo >= 500)
+        if(Score.scoreCalculo >= 100 && Score.scoreCalculo < 200)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 11)
+            {
+                playerSpeed = 11f;
+            }
+        }
+        if (Score.scoreCalculo >= 200 && Score.scoreCalculo < 300)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 12)
+            {
+                playerSpeed = 12f;
+            }
+        }
+        if (Score.scoreCalculo >= 300 && Score.scoreCalculo < 400)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 13)
+            {
+                playerSpeed = 13f;
+            }
+        }
+        if (Score.scoreCalculo >= 400 && Score.scoreCalculo < 500)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 14)
+            {
+                playerSpeed = 14f;
+            }
+        }
+        if (Score.scoreCalculo >= 500 && Score.scoreCalculo < 600)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 15)
+            {
+                playerSpeed = 15f;
+            }
+        }
+        if (Score.scoreCalculo >= 600 && Score.scoreCalculo < 700)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 16)
+            {
+                playerSpeed = 16f;
+            }
+        }
+        if (Score.scoreCalculo >= 700 && Score.scoreCalculo < 800)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 17)
+            {
+                playerSpeed = 17f;
+            }
+        }
+        if (Score.scoreCalculo >= 800 && Score.scoreCalculo < 900)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 18)
+            {
+                playerSpeed = 18f;
+            }
+        }
+        if (Score.scoreCalculo >= 900 && Score.scoreCalculo < 1000)
+        {
+            playerSpeed += 2f * Time.deltaTime;
+            if (playerSpeed > 19)
+            {
+                playerSpeed = 19f;
+            }
+        }
+        if (Score.scoreCalculo >= 1000)
         {
             playerSpeed += 2f * Time.deltaTime;
             posicao = 2;
@@ -316,21 +399,14 @@ public class MovingThings : MonoBehaviour
                     timeLeftInvincible = 5 + upgradeTimerInvincible;
                     break;
             }
-            /*if (numerodoid == 1)
-            {
-                Destroy(other.gameObject);
-                tempopowerupmult = Time.time;
-                Score.multiplyer = 2;
-            }
-            if (numerodoid == 2)
-            {
-                Destroy(other.gameObject);
-                tempopowerupinvencible = Time.time;
-                isIndestructuble = true;
-            }*/
+            
             
               
             
+        }
+        if(other.gameObject.tag == "PolicialaAtacar")
+        {
+            policialpodeatacar = true;
         }
     }
 
