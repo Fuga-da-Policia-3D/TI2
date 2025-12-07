@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CopActions : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CopActions : MonoBehaviour
     private int AtaquesTotalanimal;
     //camera pos para salvar (-11.32,1.48,0) rotation (0,90,0)
 
-
+    public GameObject imagemdoataquePolicial;
     private bool podeAtacarPolicial = true;
     private bool podeAtacarAnimal = true;
 
@@ -72,6 +73,7 @@ public class CopActions : MonoBehaviour
             policialAtacando = true;
             acaopolicial = 0;
             contador = 0;
+            
         }
        
         
@@ -90,6 +92,7 @@ public class CopActions : MonoBehaviour
         
         if(AtaquesTotal >= 10)
         {
+            imagemdoataquePolicial.SetActive(false);
             PathMaking.pathafazer = 1;
             acaopolicial = Random.Range(1, 4);
             MovingThings.policialpodeatacar = false;
@@ -162,5 +165,6 @@ public class CopActions : MonoBehaviour
     }
 
 
+    
    
 }

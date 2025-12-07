@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
             }
             else if(Vector3.Dot(normal, Vector3.right) > 0.5f && collision.gameObject.tag == "Obstacle" || Vector3.Dot(normal, Vector3.left) > 0.5f && collision.gameObject.tag == "Obstacle" && MovingThings.isIndestructuble)
             {
+                Score.scoreCalculo += 15;
                 Destroy(collision.gameObject);
             }
         }

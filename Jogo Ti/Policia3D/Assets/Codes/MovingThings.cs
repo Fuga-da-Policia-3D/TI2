@@ -26,6 +26,8 @@ public class MovingThings : MonoBehaviour
     private float timer;
     public static bool pausado = false;
 
+
+    public GameObject imagemdoataquePolicial;
     float timerMultiplier = 0f;
     int timeLeftMultiplier = 16 ;
     int upgradeTimerMult = 0;
@@ -241,7 +243,7 @@ public class MovingThings : MonoBehaviour
     void SpeedUP()
     {
         float posicao = 1;
-        if(Score.scoreCalculo >= 0 && Score.scoreCalculo < 100)
+        if(this.gameObject.transform.position.x >= 0 && this.gameObject.transform.position.x < 100)
         {
             playerSpeed += 2f * Time.deltaTime;
             if(playerSpeed > 10)
@@ -249,7 +251,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 10f;
             }
         }
-        if(Score.scoreCalculo >= 100 && Score.scoreCalculo < 200)
+        if(this.gameObject.transform.position.x >= 100 && this.gameObject.transform.position.x < 200)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 11)
@@ -257,7 +259,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 11f;
             }
         }
-        if (Score.scoreCalculo >= 200 && Score.scoreCalculo < 300)
+        if (this.gameObject.transform.position.x >= 200 && this.gameObject.transform.position.x < 300)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 12)
@@ -265,7 +267,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 12f;
             }
         }
-        if (Score.scoreCalculo >= 300 && Score.scoreCalculo < 400)
+        if (this.gameObject.transform.position.x >= 300 && this.gameObject.transform.position.x < 400)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 13)
@@ -273,7 +275,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 13f;
             }
         }
-        if (Score.scoreCalculo >= 400 && Score.scoreCalculo < 500)
+        if (this.gameObject.transform.position.x >= 400 && this.gameObject.transform.position.x < 500)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 14)
@@ -281,7 +283,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 14f;
             }
         }
-        if (Score.scoreCalculo >= 500 && Score.scoreCalculo < 600)
+        if (this.gameObject.transform.position.x >= 500 && this.gameObject.transform.position.x < 600)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 15)
@@ -289,7 +291,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 15f;
             }
         }
-        if (Score.scoreCalculo >= 600 && Score.scoreCalculo < 700)
+        if (this.gameObject.transform.position.x >= 600 && this.gameObject.transform.position.x < 700)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 16)
@@ -297,7 +299,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 16f;
             }
         }
-        if (Score.scoreCalculo >= 700 && Score.scoreCalculo < 800)
+        if (this.gameObject.transform.position.x >= 700 && this.gameObject.transform.position.x < 800)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 17)
@@ -305,7 +307,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 17f;
             }
         }
-        if (Score.scoreCalculo >= 800 && Score.scoreCalculo < 900)
+        if (this.gameObject.transform.position.x >= 800 && this.gameObject.transform.position.x < 900)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 18)
@@ -313,7 +315,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 18f;
             }
         }
-        if (Score.scoreCalculo >= 900 && Score.scoreCalculo < 1000)
+        if (this.gameObject.transform.position.x >= 900 && this.gameObject.transform.position.x < 1000)
         {
             playerSpeed += 2f * Time.deltaTime;
             if (playerSpeed > 19)
@@ -321,7 +323,7 @@ public class MovingThings : MonoBehaviour
                 playerSpeed = 19f;
             }
         }
-        if (Score.scoreCalculo >= 1000)
+        if (this.gameObject.transform.position.x >= 1000)
         {
             playerSpeed += 2f * Time.deltaTime;
             posicao = 2;
@@ -375,9 +377,11 @@ public class MovingThings : MonoBehaviour
             }
             else if(Vector3.Dot(normal, Vector3.back) > 0.5f || Vector3.Dot(normal, Vector3.forward) > 0.5f && isIndestructuble)
             {
+               
                 Destroy(collision.gameObject);
             }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -415,6 +419,7 @@ public class MovingThings : MonoBehaviour
         }
         if(other.gameObject.tag == "PolicialaAtacar")
         {
+            imagemdoataquePolicial.SetActive(true);
             policialpodeatacar = true;
         }
     }
