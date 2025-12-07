@@ -61,6 +61,7 @@ public class MovingThings : MonoBehaviour
     private void Awake()
     {
         aM = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        pausado = false;
     }
     void Start()
     {
@@ -142,10 +143,12 @@ public class MovingThings : MonoBehaviour
         if(tempopowerupmult + 12f + upgradeTimerMult < Time.time)
         {
             Score.multiplyer = 1;
+            
             if (aplicadoTimerMult)
             {
                 timeLeftMultiplier = 12 + upgradeTimerMult;
                 aplicadoTimerMult = false;
+                VerificarSkinPlayerCop.trocardevolta = VerificarSkinPlayerCop.VoltarSkinNormal(1);
             }
             GameController.instancia.TempoDoPowerUp(1, 0);
         }
@@ -169,10 +172,12 @@ public class MovingThings : MonoBehaviour
         if (tempopowerupinvencible + 5f + upgradeTimerInvincible < Time.time)
         {
             isIndestructuble = false;
+            
             if (aplicadoTimerInv)
             {
                 timeLeftInvincible = 5 + upgradeTimerInvincible;
                 aplicadoTimerInv = false;
+                VerificarSkinPlayerCop.trocardevolta = VerificarSkinPlayerCop.VoltarSkinNormal(2);
             }
             GameController.instancia.TempoDoPowerUp(2, 0);
         }
@@ -338,7 +343,7 @@ public class MovingThings : MonoBehaviour
         {
             Vector3 normal = contact.normal;
 
-            if (Vector3.Dot(normal, Vector3.forward) > 0.5f)
+            if (Vector3.Dot(normal, Vector3.forward) > 0.5f && !isIndestructuble)
             {
                 aM.PlaySFX(aM.grunt);
                 Debug.Log("Hit from behind");
@@ -353,7 +358,7 @@ public class MovingThings : MonoBehaviour
                 //myLane--;
                 isSlowed = true;
             }
-            else if (Vector3.Dot(normal, Vector3.back) > 0.5f)
+            else if (Vector3.Dot(normal, Vector3.back) > 0.5f && !isIndestructuble)
             {
                 aM.PlaySFX(aM.grunt);
                 Debug.Log("Hit from the front");
@@ -367,6 +372,10 @@ public class MovingThings : MonoBehaviour
                 }
                 //myLane++;
                 isSlowed = true;
+            }
+            else if(Vector3.Dot(normal, Vector3.back) > 0.5f || Vector3.Dot(normal, Vector3.forward) > 0.5f && isIndestructuble)
+            {
+                Destroy(collision.gameObject);
             }
         }
     }

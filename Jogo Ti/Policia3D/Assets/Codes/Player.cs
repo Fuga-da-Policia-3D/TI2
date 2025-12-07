@@ -66,14 +66,14 @@ public class Player : MonoBehaviour
     {
         Vector3 direction = (other.transform.position - transform.position).normalized;
 
-        if (Vector3.Dot(direction, Vector3.right) > 0.5f && other.gameObject.tag == "Obstacle")
+        if (Vector3.Dot(direction, Vector3.right) > 0.5f && other.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
         {
             audioManager.PlaySFX(audioManager.grunt);
             Debug.Log("Triggered on the right side");
             Time.timeScale = 0;
             GameOver.instacia.GameOverScreen();
         }
-        else if (Vector3.Dot(direction, Vector3.left) > 0.5f && other.gameObject.tag == "Obstacle")
+        else if (Vector3.Dot(direction, Vector3.left) > 0.5f && other.gameObject.tag == "Obstacle" && !MovingThings.isIndestructuble)
         {
             audioManager.PlaySFX(audioManager.grunt);
             Debug.Log("Triggered on the left side");

@@ -10,7 +10,7 @@ public class DestruirObjetos : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        Destroy(this.gameObject,30);
+        Destroy(this.gameObject,20);
     }
     
 }
